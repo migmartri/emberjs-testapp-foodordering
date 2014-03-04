@@ -2,11 +2,8 @@ App.IndexController = Ember.Controller.extend({
   actions: {
     createOrder: function(){
       controller = this;
-      this.store.createRecord("Order").save().then(function(order){
-        // TODO, fixme
+      this.store.createRecord("order").save().then(function(order){
         controller.transitionToRoute('order', order);
-      }, function(){
-       console.error("Error");
       });
     }
   }
