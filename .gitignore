@@ -1,0 +1,23 @@
+.sass-cache
+
+#Configuraciones
+config/database.yml
+
+db/schema.rb
+
+#Ignorando log
+log/*.log
+.DS_Store
+
+*.swp
+*.swm
+*.swn
+*.swo
+
+#packaged
+*packaged*
+*.rdb
+.directory
+.bundle
+/tmp
+public/system
