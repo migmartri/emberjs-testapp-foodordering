@@ -1,2 +1,7 @@
 This is the order {{model.id}}
+<ul>
+{{#each model.line_items}}
+<li>{{id}} {{qty}}</li>
+{{/each}}
+</ul>
 

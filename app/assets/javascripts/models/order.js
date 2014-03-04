@@ -1,5 +1,5 @@
-attr = DS.attr;
+var attr = DS.attr;
 App.Order = DS.Model.extend({
-  user_sessions: DS.hasMany('LineItem'),
+  line_items: DS.hasMany('LineItem'),
   created_at: attr()
 });

@@ -1,9 +1,3 @@
-// http://emberjs.com/guides/models/using-the-store/
-
-App.Store = DS.Store.extend({
-  adapter: '-active-model'
-});
-
-DS.ActiveModelAdapter.reopen({
+App.ApplicationAdapter = DS.RESTAdapter.extend({
   namespace: 'api/v1'
-});
+})
