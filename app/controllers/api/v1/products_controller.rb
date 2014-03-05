@@ -31,6 +31,7 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def setup_picture
+    return nil if params[:product][:picture] == 'none'
     if picture_info = params[:product][:picture]
       header, data = picture_info.split(',')
       # Paperclip 4.0 force us to create the file using the extension

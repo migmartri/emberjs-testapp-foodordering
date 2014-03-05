@@ -1,25 +1,29 @@
-<h3>List of products
+<h3>Available products
 {{#link-to 'products.new' class='btn btn-default'}}New product{{/link-to}}
 </h3>
 {{outlet}}
 <section>
-<table class="table table-striped">
-  <tr>
-    <th></th>
-    <th>ID</th>
-    <th>Title</th>
-    <th></th>
-  </tr>
-  {{#each model}}
+{{#if model}}
+  <table class="table table-striped">
     <tr>
-      <td><img {{bind-attr src=picture_thumb}}"/></td>
-      <td>{{id}}</td>
-      <td>{{title}}</td>
-      <td>
-        {{#link-to 'product.edit' this}}Edit{{/link-to}}
-        <a {{action 'delete' this}} href="#">Delete</a>
-      </td>
+      <th></th>
+      <th>ID</th>
+      <th>Title</th>
+      <th></th>
     </tr>
-  {{/each}}
-</table>
+    {{#each model}}
+      <tr>
+        <td><img {{bind-attr src=picture_thumb}}"/></td>
+        <td>{{id}}</td>
+        <td>{{title}}</td>
+        <td>
+          {{#link-to 'product.edit' this}}Edit{{/link-to}}
+          <a {{action 'delete' this}} href="#">Delete</a>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+{{else}}
+  <p> There are no products, create the first one </p>
+{{/if}}
 </section>
