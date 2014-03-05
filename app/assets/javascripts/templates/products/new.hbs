@@ -1,1 +1,10 @@
-{{partial 'product/product_form'}}
+<div class='row'>
+  <div class='col-sm-5'>
+    <form role="form">
+      {{partial 'product/product_form'}}
+      <div class='form-group'>
+        <a href='#' {{action 'create'}} class='btn btn-default'>Save</a>
+      </div>
+    </form>
+  </div>
+</div>

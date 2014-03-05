@@ -12,7 +12,7 @@ class Api::V1::ProductsController < ApplicationController
   end
   
   def create
-    @product = Product.create(product_params.merge(picture: setup_picture))
+    @product = Product.create(product_params)
     render json: @product
   end
 
@@ -32,7 +32,7 @@ class Api::V1::ProductsController < ApplicationController
   #end
 
   def product_params
-    params.require(:product).permit([:title])
+    params.require(:product).permit([:title]).merge(picture: setup_picture)
   end
 
   def setup_picture
