@@ -8,7 +8,7 @@ App.UploadImageView = Ember.TextField.extend({
         var that = this;
         reader.onload = function(e) {
           var fileToUpload = e.srcElement.result;
-          self.get('controller').set(self.get('name'), fileToUpload);
+          self.get('targetObject').set(self.get('name'), fileToUpload);
         }
         reader.readAsDataURL(input.files[0]);
       }

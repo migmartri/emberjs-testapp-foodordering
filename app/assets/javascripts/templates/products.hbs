@@ -5,12 +5,14 @@
 <section>
 <table class="table table-striped">
   <tr>
+    <th></th>
     <th>ID</th>
     <th>Title</th>
     <th></th>
   </tr>
   {{#each model}}
     <tr>
+      <td><img {{bind-attr src=picture_thumb}}"/></td>
       <td>{{id}}</td>
       <td>{{title}}</td>
       <td>

@@ -6,8 +6,8 @@
           {{view Ember.TextField valueBinding='title' name='title' viewName='title' class="form-control"}}
         </div>
         <div class='form-group'>
-          <label class="control-label" {{bind-attr for="upload_avatar.id"}}>Logo</label>
-          {{view App.UploadImageView name="upload_logo" contentBinding="logoThumb" class="form-control"}}
+          <label class="control-label">Picture</label>
+          {{view App.UploadImageView name="upload_picture" contentBinding="pictureThumb" class="form-control"}}
         </div>
         <div>
           <a href='#' {{action 'create'}} class='btn btn-default'>Save</a>

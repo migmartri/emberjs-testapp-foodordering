@@ -1,5 +1,7 @@
 var attr = DS.attr;
 App.Product = DS.Model.extend({
   created_at: attr(),
-  title: attr()
+  title: attr('string'),
+  picture: attr('string'),
+  picture_thumb: attr('string')
 });
