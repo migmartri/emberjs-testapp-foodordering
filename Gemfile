@@ -9,6 +9,7 @@ gem "active_model_serializers"
 gem 'haml'
 gem 'ember-rails'
 gem 'ember-source', '1.4.0' # or the version you need
+gem 'aasm'
 
 
 # Bootstrap 3

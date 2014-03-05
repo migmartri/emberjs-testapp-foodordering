@@ -3,7 +3,11 @@ class Api::V1::OrdersController < ApplicationController
   before_filter :load_order
 
   def index
-    respond_with Order.all.to_a
+    if params[:current]
+      respond_with Order.open
+    else
+      respond_with Order.all
+    end
   end
 
   def create
