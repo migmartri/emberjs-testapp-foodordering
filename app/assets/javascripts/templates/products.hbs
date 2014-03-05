@@ -1,20 +1,23 @@
-<h3>List of products</h3>
+<h3>List of products
+{{#link-to 'products.new' class='btn btn-default'}}New product{{/link-to}}
+</h3>
+{{outlet}}
+<section>
 <table class="table table-striped">
   <tr>
-    </th> Name </th>
+    <th>ID</th>
+    <th>Title</th>
+    <th></th>
   </tr>
   {{#each model}}
     <tr>
-      <td>
-        {{name}}
-      </td>
+      <td>{{id}}</td>
+      <td>{{title}}</td>
       <td>
         {{#link-to 'product.edit' this}}Edit{{/link-to}}
-        {{#link-to 'product.delete' this}}Delete{{/link-to}}
+        <a {{action 'delete' this}} href="#">Delete</a>
       </td>
     </tr>
   {{/each}}
 </table>
-{{outlet}}
-{{#link-to 'products.new' class='btn btn-default'}}New product{{/link-to}}
-
+</section>
