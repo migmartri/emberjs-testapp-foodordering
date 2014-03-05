@@ -7,10 +7,15 @@ class Api::V1::ProductsController < ApplicationController
     respond_with Product.all.to_a
   end
 
+  def show
+    render json: @product
+  end
+  
   def create
     @product = Product.create(product_params.merge(picture: setup_picture))
     render json: @product
   end
+
 
   def update
     @product = @product.update_attributes(product_params)

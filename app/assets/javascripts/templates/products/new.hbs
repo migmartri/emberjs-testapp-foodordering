@@ -1,17 +1,1 @@
-<div class='row'>
-  <div class='col-sm-5'>
-    <form role="form">
-        <div class='form-group'>
-          <label  class="control-label">Product title</label>
-          {{view Ember.TextField valueBinding='title' name='title' viewName='title' class="form-control"}}
-        </div>
-        <div class='form-group'>
-          <label class="control-label">Picture</label>
-          {{view App.UploadImageView name="upload_picture" contentBinding="pictureThumb" class="form-control"}}
-        </div>
-        <div>
-          <a href='#' {{action 'create'}} class='btn btn-default'>Save</a>
-        </div>
-    </form>
-  </div>
-</div>
+{{partial 'product/product_form'}}
