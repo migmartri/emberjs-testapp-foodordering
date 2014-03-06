@@ -5,7 +5,6 @@ App.IndexRoute = Ember.Route.extend({
   },
   setupController: function(controller, model){
     controller.set('model', model.get('firstObject'));
-    console.warn(model.get('firstObject').get('line_items'))
     /* Load products */
     this.store.find('product').then(function(products){
       controller.set('products', products);

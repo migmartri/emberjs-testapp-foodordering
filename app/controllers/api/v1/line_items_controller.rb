@@ -9,7 +9,8 @@ class Api::V1::LineItemsController < ApplicationController
   end
 
   def update
-    respond_with @order
+    @line_item = LineItem.find(params[:id]).update_attribute(:qty, line_items_params[:qty])
+    respond_with @line_item
   end
 
   def line_items_params
