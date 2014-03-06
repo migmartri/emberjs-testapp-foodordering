@@ -1,27 +1,29 @@
-<h3>Available products
-{{#link-to 'products.new' class='btn btn-default'}}New product{{/link-to}}
-</h3>
-{{outlet}}
-<section>
-{{#if model}}
-  <table class="table table-striped">
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th></th>
-    </tr>
-    {{#each model}}
+<div class='col-sm-9 col-sm-offset-1 box'>
+  <h3>Available products
+  {{#link-to 'products.new' class='btn btn-default'}}New product{{/link-to}}
+  </h3>
+  {{outlet}}
+  <section>
+  {{#if model}}
+    <table class="table table-striped">
       <tr>
-        <td><img {{bind-attr src=picture_thumb}}"/></td>
-        <td>{{title}}</td>
-        <td>
-          {{#link-to 'product.edit' this}}Edit{{/link-to}}
-          <a {{action 'delete' this}} href="#">Delete</a>
-        </td>
+        <th></th>
+        <th>Title</th>
+        <th></th>
       </tr>
-    {{/each}}
-  </table>
-{{else}}
-  <p> There are no products, create the first one </p>
-{{/if}}
-</section>
+      {{#each model}}
+        <tr>
+          <td><img {{bind-attr src=picture_thumb}}"/></td>
+          <td>{{title}}</td>
+          <td>
+            {{#link-to 'product.edit' this}}Edit{{/link-to}}
+            <a {{action 'delete' this}} href="#">Delete</a>
+          </td>
+        </tr>
+      {{/each}}
+    </table>
+  {{else}}
+    <p> There are no products, create the first one </p>
+  {{/if}}
+  </section>
+</div>

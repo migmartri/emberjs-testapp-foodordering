@@ -17,6 +17,7 @@
 //= require ember
 //= require ember-data
 //= require plugins/masonry.pkgd.min.js
+//= require plugins/imagesloaded.pkgd.min.js
 //= require_self
 //= require ember-app
 

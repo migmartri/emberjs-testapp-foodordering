@@ -66,4 +66,14 @@ body{
     border: 1px solid #FF3E36;
   }
 }
+#order_products
+  .product_item{
+    .box{
+      padding: 0px;
+      .header{
+        text-align:center;
+        padding: 5px 10px;
+      }
+    }
+  }
 }

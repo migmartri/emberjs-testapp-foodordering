@@ -1,6 +1,6 @@
 <div class='col-sm-8'>
   {{#if model}}
-    {{render 'order_products' products}}
+    {{view 'App.OrderProductsView'}}
   {{else}}
     <h3>There is not current order, create new one</h3>
     <button {{action 'createOrder'}} class='btn'>Create order</button>
