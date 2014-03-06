@@ -7,8 +7,8 @@
   {{/if}}
 </div>
 
-<div class='col-sm-4'>
-  <div class='box'>
-    <h3> Line items </h3>
+{{#if model}}
+  <div class='col-sm-4'>
+    {{view 'App.OrderLineItemsView'}}
   </div>
-</div>
+{{/if}}
