@@ -1,8 +1,8 @@
 var attr = DS.attr;
 App.LineItem = DS.Model.extend({
-  product: DS.belongsTo('Product'),
+  product: DS.belongsTo('product'),
   productId: attr(),
-  order: DS.belongsTo('Order'),
+  order: DS.belongsTo('order'),
   //created_at: attr(),
   qty: attr('number', {defaultValue: 1}),
   incrQty: function(){

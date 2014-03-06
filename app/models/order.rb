@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   include AASM
   has_many :line_items
+  has_many :products, through: :line_items
 
   validate :only_one_open
 
