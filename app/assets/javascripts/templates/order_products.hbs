@@ -1,12 +1,5 @@
 <div id='order_products' class='row'>
   {{#each model.products}}
-    <div class='col-sm-4 product_item'>
-      <div class='box'>
-        <div class='header'>
-          {{title}}
-         </div>
-        <img {{bind-attr src='picture_medium'}} class="img-responsive" alt="">
-      </div>
-    </div>
+    {{view App.OrderProductItemView}}
   {{/each}}
 </div>
