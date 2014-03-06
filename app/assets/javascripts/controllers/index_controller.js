@@ -10,11 +10,10 @@ App.IndexController = Ember.ObjectController.extend({
     },
     addLineItem: function(product) {
       order = this.get('model');
-      /* Search for a line item, if it does not exist create it 
-      * TODO*/
       var store = this.store;
+
       var existing = this.store.filter('lineItem', function(li) { 
-        return li.get('productId') == product.get('id');
+        return li.get('product').get('id') == product.get('id');
       }).then(function(existing) {
           if(existing.get('length') > 0){
             elem = existing.get('content')[0];

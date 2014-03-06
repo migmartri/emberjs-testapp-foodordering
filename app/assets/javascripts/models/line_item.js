@@ -1,7 +1,8 @@
 var attr = DS.attr;
 App.LineItem = DS.Model.extend({
   product: DS.belongsTo('product'),
-  productId: attr(),
+  // If we add the productId attribute the relationship does not work
+  //productId: attr(),
   order: DS.belongsTo('order'),
   //created_at: attr(),
   qty: attr('number', {defaultValue: 1}),
