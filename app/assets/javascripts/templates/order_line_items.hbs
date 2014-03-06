@@ -1,8 +1,8 @@
 <div class='box row' id='order_line_items'>
-  <ul>
-  <h3> {{#link-to 'order' model}}Line items{{/link-to}} </h3>
-  {{#each model.line_items}}
-  <li>{{id}} {{qty}}</li>
-  {{/each}}
-</ul>
+  <h3> {{#link-to 'order' model}}Order Items{{/link-to}} </h3>
+  <table id='line-items'>
+    {{#each model.line_items}}
+      {{view App.OrderLineItemView}}
+    {{/each}}
+  </table>
 </div>
