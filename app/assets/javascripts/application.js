@@ -16,6 +16,7 @@
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require plugins/masonry.pkgd.min.js
 //= require_self
 //= require ember-app
 
@@ -26,3 +27,4 @@ App = Ember.Application.create({
 });
 
 //= require_tree .
+//var msnry = new Masonry(document.querySelector('#order_products'), { itemSelector: '.product_item'});

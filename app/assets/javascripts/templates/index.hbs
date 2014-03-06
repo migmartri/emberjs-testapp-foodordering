@@ -1,12 +1,14 @@
-{{#if model}}
-Hello there
-{{id}}
-<ul>
-{{#each products}}
-<li>{{title}}</li>
-{{/each}}
-</ul>
-{{else}}
-  <h3>There is not current order, create new one</h3>
-  <button {{action 'createOrder'}} class='btn'>Create order</button>
-{{/if}}
+<div class='col-sm-8'>
+  {{#if model}}
+    {{render 'order_products' products}}
+  {{else}}
+    <h3>There is not current order, create new one</h3>
+    <button {{action 'createOrder'}} class='btn'>Create order</button>
+  {{/if}}
+</div>
+
+<div class='col-sm-4'>
+  <div class='box'>
+    <h3> Line items </h3>
+  </div>
+</div>

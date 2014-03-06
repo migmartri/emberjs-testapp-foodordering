@@ -1,0 +1,10 @@
+<div id='order_products' class='row'>
+  {{#each model}}
+    <div class='col-sm-4 product_item'>
+      <div class='box'>
+        {{title}}
+        <img {{bind-attr src='picture_medium'}} class="img-responsive" alt="">
+      </div>
+    </div>
+  {{/each}}
+</div>
