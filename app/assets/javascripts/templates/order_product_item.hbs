@@ -2,5 +2,11 @@
   <div class='header'>
     {{title}}
    </div>
-  <img {{bind-attr src='picture_medium'}} class="img-responsive" alt="">
+
+  <div class='image'>
+    <img {{bind-attr src='picture_medium'}} class="img-responsive" alt="">
+    {{#if view.hovered}}
+      <h2><span>+1</span></h2>
+    {{/if}}
+  </div>
 </div>
