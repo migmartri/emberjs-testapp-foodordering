@@ -6,8 +6,10 @@ App.IndexRoute = Ember.Route.extend({
   setupController: function(controller, model){
     controller.set('model', model.get('firstObject'));
     /* Load products */
-    this.store.find('product').then(function(products){
-      controller.set('products', products);
-    });
+    if(controller.get('model')){
+      this.store.find('product').then(function(products){
+        controller.set('products', products);
+      });
+    }
   }
 });

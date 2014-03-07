@@ -6,6 +6,8 @@
   <div class='col-sm-9 col-sm-offset-1 box'>
     <h3>There is not current order, create new one</h3>
     <button {{action 'createOrder'}} class='btn btn-default'>Create order</button>
+    or
+    {{#link-to 'orders'}}view previous orders{{/link-to}}
   </div>
 {{/if}}
 
