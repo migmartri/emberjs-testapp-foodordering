@@ -8,7 +8,7 @@ App.IndexController = Ember.ObjectController.extend({
         //controller.transitionToRoute('order', order);
       });
     },
-    addLineItem: function(product) {
+    addItem: function(product) {
       order = this.get('model');
       var store = this.store;
 
@@ -22,6 +22,9 @@ App.IndexController = Ember.ObjectController.extend({
             store.createRecord("lineItem", {product: product, order: order}).save();
           }
       });
+    },
+    removeLineItem: function(li){
+      li.destroyRecord();
     }
   }
 });

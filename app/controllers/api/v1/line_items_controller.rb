@@ -13,6 +13,12 @@ class Api::V1::LineItemsController < ApplicationController
     respond_with @line_item
   end
 
+  def destroy
+    respond_with LineItem.find(params[:id]).destroy
+
+
+  end
+
   def line_items_params
     params.require(:line_item).permit([:qty, :product_id, :order_id])
   end
