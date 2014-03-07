@@ -4,8 +4,6 @@ App.IndexController = Ember.ObjectController.extend({
       controller = this;
       this.store.createRecord("order").save().then(function(order){
         controller.set('model', order);
-        console.info('Order created');
-        //controller.transitionToRoute('order', order);
       });
     },
     /* Add new Item to the line items*/
@@ -44,5 +42,13 @@ App.IndexController = Ember.ObjectController.extend({
         controller.transitionToRoute('index');
       });
     }
-  }
+  },
+  loadProducts: function(){
+    controller = this;
+    if(controller.get('model')){
+      controller.store.find('product').then(function(products){
+        controller.set('products', products);
+      });
+    }
+  }.observes('model')
 });
