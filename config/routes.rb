@@ -4,7 +4,11 @@ Peoplefood::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :orders
+      resources :orders do
+        member do
+          post :close
+        end
+      end
       resources :line_items
       resources :products
     end

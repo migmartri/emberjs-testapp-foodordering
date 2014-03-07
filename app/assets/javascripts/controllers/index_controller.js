@@ -8,6 +8,7 @@ App.IndexController = Ember.ObjectController.extend({
         //controller.transitionToRoute('order', order);
       });
     },
+    /* Add new Item to the line items*/
     addItem: function(product) {
       order = this.get('model');
       var store = this.store;
@@ -23,9 +24,10 @@ App.IndexController = Ember.ObjectController.extend({
           }
       });
     },
+    /* Line Items management */
     removeLineItem: function(li){
       li.destroyRecord();
-    },
+    }, /* Supports negative num*/
     incrLineItem: function(li, num){
       var new_qty = li.get('qty') + num;
       li.set('qty', new_qty);
@@ -34,6 +36,13 @@ App.IndexController = Ember.ObjectController.extend({
       }else{
         li.save();
       }
+    },
+    closeOrder: function(){
+      controller = this;
+      $.post('/api/v1/orders/' + this.get('id') + '/close', function(){
+        controller.set('model', null);
+        controller.transitionToRoute('index');
+      });
     }
   }
 });

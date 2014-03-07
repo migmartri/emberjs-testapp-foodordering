@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   has_many :line_items
   has_many :products, through: :line_items
 
-  validate :only_one_open
+  validate :only_one_open, on: 'create'
 
   aasm do
     state :open, :initial => true

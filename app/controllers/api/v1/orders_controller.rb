@@ -19,6 +19,11 @@ class Api::V1::OrdersController < ApplicationController
     respond_with @order
   end
 
+  def close
+    @order.close!
+    render json: @order
+  end
+
   def load_order
     @order = Order.find(params[:id]) if params[:id]
   end
