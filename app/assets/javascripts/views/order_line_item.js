@@ -7,5 +7,8 @@ App.OrderLineItemView = Ember.View.extend({
   },
   mouseLeave: function(){
     this.set('onHover', false);
-  }
+  },
+  qtyDidChange: function() {
+    this.$().effect('highlight', 1000);
+  }.observes('context.qty')
 });

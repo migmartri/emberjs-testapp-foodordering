@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.effect.all
 //= require jquery
 //= require handlebars
 //= require ember
