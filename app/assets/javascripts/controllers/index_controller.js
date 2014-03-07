@@ -25,6 +25,15 @@ App.IndexController = Ember.ObjectController.extend({
     },
     removeLineItem: function(li){
       li.destroyRecord();
+    },
+    incrLineItem: function(li, num){
+      var new_qty = li.get('qty') + num;
+      li.set('qty', new_qty);
+      if(new_qty == 0){
+        li.destroyRecord();
+      }else{
+        li.save();
+      }
     }
   }
 });

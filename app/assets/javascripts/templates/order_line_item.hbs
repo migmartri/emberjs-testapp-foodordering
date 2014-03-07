@@ -1,12 +1,18 @@
 <td class='qty'>
+  {{#if view.onHover}}
+    <a href='#'><i class="fa fa-caret-up" {{action 'incrLineItem' this 1}}></i></a>
+  {{/if}}
   {{this.qty}}
+  {{#if view.onHover}}
+    <a href='#'><i class="fa fa-caret-down" {{action 'incrLineItem' this -1}}></i></a>
+  {{/if}}
 </td>
 <td class='img'>
   <img {{bind-attr src='this.product.picture_thumb'}} class="img-responsive" alt="">
 </td>
 <td class='title'>
   {{this.product.title}}
-  {{#if view.showRemove}}
+  {{#if view.onHover}}
     <span class='remove-item'><a href="#" {{action 'removeLineItem' this}}>X</a></span>
   {{/if}}
 </td>

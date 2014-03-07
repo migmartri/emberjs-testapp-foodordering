@@ -3,9 +3,9 @@ App.OrderLineItemView = Ember.View.extend({
   classNames: ['line-item', 'row'],
   tagName: 'tr',
   mouseEnter: function(){
-    this.set('showRemove', true);
+    this.set('onHover', true);
   },
   mouseLeave: function(){
-    this.set('showRemove', false);
+    this.set('onHover', false);
   }
 });
