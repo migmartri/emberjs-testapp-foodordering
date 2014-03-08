@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <a class="navbar-brand" href="#">Foodomatic 650 Mission</a>
+  {{#link-to 'index' class="navbar-brand"}}Foodomatic 650 Mission{{/link-to}}
   <ul class="nav navbar-nav">
-    <li class="active">
-      {{#link-to 'index'}}Current order{{/link-to}}
-    </li>
-    <li>
+      {{#view App.NavView}}
+        {{#link-to 'index'}}Current order{{/link-to}}
+      {{/view}}
+    {{#view App.NavView}}
       {{#link-to 'products'}}Products{{/link-to}}
-    </li>
+    {{/view}}
   </ul>
 </nav>
 <div id='container' class='container'>

@@ -1,4 +1,5 @@
 App.IndexController = Ember.ObjectController.extend({
+  searchQuery: null,
   actions: {
     createOrder: function(){
       controller = this;
@@ -48,7 +49,15 @@ App.IndexController = Ember.ObjectController.extend({
     if(controller.get('model')){
       controller.store.find('product').then(function(products){
         controller.set('products', products);
+        controller.set('all_products', products);
       });
     }
-  }.observes('model')
+  }.observes('model'),
+  searchedContent: function() {
+    var regexp = new RegExp(this.get('searchQuery'));
+    filtered = this.get('all_products').filter(function(item) {
+      return regexp.test(item.get('title'));
+    });
+    controller.set('products', filtered);
+  }.observes('searchQuery')
 });
