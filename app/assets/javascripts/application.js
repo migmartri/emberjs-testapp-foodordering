@@ -28,5 +28,9 @@ App = Ember.Application.create({
   LOG_ACTIVE_GENERATION: true
 });
 
+    container = $('#order_products');
+    container.imagesLoaded().progress(function(imgLoad, image){
+      console.warn('Loaded' + image);
+    });
 //= require_tree .
 //var msnry = new Masonry(document.querySelector('#order_products'), { itemSelector: '.product_item'});
