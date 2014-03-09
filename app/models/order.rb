@@ -1,8 +1,10 @@
 class Order < ActiveRecord::Base
   include AASM
+  belongs_to :company
   has_many :line_items
   has_many :products, through: :line_items
 
+  validates :company_id, presence: true
   validate :only_one_open, on: 'create'
 
   aasm do

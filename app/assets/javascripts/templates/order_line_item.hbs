@@ -13,6 +13,8 @@
 <td class='title'>
   {{this.product.title}}
   {{#if view.onHover}}
-    <span class='remove-item'><a href="#" {{action 'removeLineItem' this}}>X</a></span>
+    <span class='remove-item'><a href="#" {{action 'removeLineItem' this}}>
+      <i class='glyphicon glyphicon-remove'></i>
+    </a></span>
   {{/if}}
 </td>
