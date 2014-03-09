@@ -4,7 +4,7 @@ class Api::V1::ProductsController < ApplicationController
   #before_filter :setup_picture, only: [:create, :update]
 
   def index
-    respond_with Product.all.to_a
+    respond_with current_company.products.load
   end
 
   def show
@@ -12,7 +12,7 @@ class Api::V1::ProductsController < ApplicationController
   end
   
   def create
-    @product = Product.create(product_params)
+    @product = current_company.products.create(product_params)
     render json: @product
   end
 
@@ -51,6 +51,6 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def load_product
-    @product = Product.find(params[:id]) if params[:id]
+    @product = current_company.products.find(params[:id]) if params[:id]
   end
 end

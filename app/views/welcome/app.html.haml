@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     %title PeopleFood
     = stylesheet_link_tag "application", media: "all"
+    - if current_company
+      <meta name="current-company" content="#{CompanySerializer.new(current_company).to_json(root: false)}" />
     = csrf_meta_tags
   %body
     = javascript_include_tag "application"

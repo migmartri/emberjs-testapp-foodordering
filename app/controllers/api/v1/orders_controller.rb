@@ -4,14 +4,14 @@ class Api::V1::OrdersController < ApplicationController
 
   def index
     if params[:current]
-      respond_with Order.open
+      respond_with current_company.orders.open
     else
-      respond_with Order.all
+      respond_with current_company.orders.all
     end
   end
 
   def create
-    @order = Order.create
+    @order = current_company.orders.create
     render json: @order
   end
 
@@ -25,6 +25,6 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   def load_order
-    @order = Order.find(params[:id]) if params[:id]
+    @order = current_company.orders.find(params[:id]) if params[:id]
   end
 end

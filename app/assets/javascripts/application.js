@@ -19,6 +19,7 @@
 //= require ember-data
 //= require plugins/masonry.pkgd.min.js
 //= require plugins/imagesloaded.pkgd.min.js
+//= require bootstrap/dropdown
 //= require_self
 //= require ember-app
 
@@ -28,9 +29,5 @@ App = Ember.Application.create({
   LOG_ACTIVE_GENERATION: true
 });
 
-    container = $('#order_products');
-    container.imagesLoaded().progress(function(imgLoad, image){
-      console.warn('Loaded' + image);
-    });
 //= require_tree .
 //var msnry = new Masonry(document.querySelector('#order_products'), { itemSelector: '.product_item'});
