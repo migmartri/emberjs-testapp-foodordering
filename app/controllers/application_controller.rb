@@ -4,7 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_company
-    return nil unless session[:current_company]
-    @current_company ||= Company.find(session[:current_company])
+    return nil unless session[:current_company_id]
+    @current_company ||= Company.find(session[:current_company_id])
   end
+
 end

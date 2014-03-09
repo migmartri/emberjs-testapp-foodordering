@@ -11,6 +11,11 @@ Peoplefood::Application.routes.draw do
       end
       resources :line_items
       resources :products
+      resources :companies do
+        collection do
+          post :check_code
+        end
+      end
     end
   end
 
