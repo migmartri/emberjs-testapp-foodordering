@@ -1,5 +1,7 @@
 App.IndexRoute = Ember.Route.extend({
-  setupController: function(controller, model){
-    console.log('Inside');
+  beforeModel: function(transition){
+    if(this.controllerFor("currentCompany").get('isSignedIn')){
+      this.transitionTo('currentOrder');
+    }
   }
 });

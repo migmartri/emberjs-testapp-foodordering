@@ -4,7 +4,7 @@ class Api::V1::ProductsController < ApplicationController
   #before_filter :setup_picture, only: [:create, :update]
 
   def index
-    respond_with current_company.products.all.to_a
+    respond_with current_company.products.load
   end
 
   def show

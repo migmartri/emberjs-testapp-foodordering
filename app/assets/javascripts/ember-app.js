@@ -8,4 +8,5 @@
 //= require_tree ./templates
 //= require ./router
 //= require_tree ./routes
+//= require_tree ./initializers
 //= require_self

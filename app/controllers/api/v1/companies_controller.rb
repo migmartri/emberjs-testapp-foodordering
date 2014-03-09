@@ -9,4 +9,9 @@ class Api::V1::CompaniesController < ApplicationController
       render json: 'Invalid code', status: 400
     end
   end
+
+  def logout
+    session.delete(:current_company_id)
+    render text: 'Logged out'
+  end
 end

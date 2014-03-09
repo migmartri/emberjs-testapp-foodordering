@@ -1,5 +1,6 @@
 App.CurrentOrderController = Ember.ObjectController.extend({
   actions: {
+    logout: function(){console.log('Logout');return},
     createOrder: function(){
       controller = this;
       this.store.createRecord("order").save().then(function(order){

@@ -14,6 +14,7 @@ Peoplefood::Application.routes.draw do
       resources :companies do
         collection do
           post :check_code
+          post :logout
         end
       end
     end
