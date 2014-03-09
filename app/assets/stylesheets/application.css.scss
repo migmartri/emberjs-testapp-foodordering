@@ -42,7 +42,7 @@ body{
       margin-bottom: 20px;
     }
   }
-input#filter_products{ margin: 0 0 10px 15px}  
+input#filter_products{ margin: 0 0 10px 15px}
 #order_products{
   .product_item{
     display:none;
@@ -74,6 +74,7 @@ input#filter_products{ margin: 0 0 10px 15px}
   }
 }
 #order_line_items{
+  position: fixed;
   table#line-items{
     width:100%;
     td{
