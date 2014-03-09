@@ -49,11 +49,12 @@ App.CurrentOrderController = Ember.ObjectController.extend({
     if(controller.get('model')){
       controller.store.find('product').then(function(products){
         controller.set('products', products);
+        controller.set('all_products', products);
       });
     }
   }.observes('model'),
   searchedContent: function() {
-    var regexp = new RegExp(this.get('searchQuery'));
+    var regexp = new RegExp(this.get('searchQuery'), 'i');
     filtered = this.get('all_products').filter(function(item) {
       return regexp.test(item.get('title'));
     });
