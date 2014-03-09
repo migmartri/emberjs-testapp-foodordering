@@ -16,8 +16,25 @@
           <td><img {{bind-attr src=picture_thumb}}"/></td>
           <td>{{title}}</td>
           <td>
-            {{#link-to 'product.edit' this}}Edit{{/link-to}}
-            <a {{action 'delete' this}} href="#">Delete</a>
+            <div class="dropdown">
+              <a href="#" data-toggle="dropdown">
+                Actions
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation">
+                  {{#link-to 'product.edit' this}}
+                    <i class="fa fa-pencil-square-o"></i>
+                    Edit
+                  {{/link-to}}
+                </li>
+                <li role="presentation">
+                  <a {{action 'delete' this}} href="#">
+                    <i class='glyphicon glyphicon-remove'></i>
+                    Delete</a>
+                </li>
+              </ul>
+            </div>
           </td>
         </tr>
       {{/each}}
