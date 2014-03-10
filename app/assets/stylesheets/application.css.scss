@@ -75,6 +75,7 @@ input#filter_products{ margin: 0 0 10px 15px}
 }
 #order_line_items{
   position: fixed;
+  min-width: 350px;
   table#line-items{
     width:100%;
     td{
@@ -84,7 +85,7 @@ input#filter_products{ margin: 0 0 10px 15px}
   .line-item{
     border-bottom: 1px solid #eee;
     padding: 10px 0;
-    height: 80px;
+    height: 85px;
     margin-bottom: 5px;
     .qty{
       width: 35px;
@@ -95,8 +96,11 @@ input#filter_products{ margin: 0 0 10px 15px}
       padding: 15px 0;
       width: 60px;
     }
+    .title{
+      width: 200px;
+    }
     .remove-item{
-      float:right;
+      width:40px;
     }
   }
 }

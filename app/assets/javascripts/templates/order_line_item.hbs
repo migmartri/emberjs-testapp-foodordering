@@ -12,9 +12,11 @@
 </td>
 <td class='title'>
   {{this.product.title}}
+</td>
+<td class='remove-item'>
   {{#if view.onHover}}
-    <span class='remove-item'><a href="#" {{action 'removeLineItem' this}}>
+    <a href="#" {{action 'removeLineItem' this}}>
       <i class='glyphicon glyphicon-remove'></i>
-    </a></span>
+    </a>
   {{/if}}
 </td>
