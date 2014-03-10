@@ -76,13 +76,14 @@ input#filter_products{ margin: 0 0 10px 15px}
 #order_line_items{
   position: fixed;
   width: 350px;
-  table#line-items{
+  #suggesting_heading{margin-top:10px;}
+  table#line-items, table#suggestions{
     width:100%;
     td{
       padding: 12px 8px;
     }
   }
-  .line-item{
+  .line-item, .suggestion{
     border-bottom: 1px solid #eee;
     padding: 10px 0;
     height: 85px;

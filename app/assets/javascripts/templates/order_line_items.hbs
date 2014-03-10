@@ -1,14 +1,36 @@
 <div class='box row' id='order_line_items'>
   <span class='heading'>Order Items</span>
-  <table id='line-items'>
-    {{#each model.line_items}}
-      {{view App.OrderLineItemView}}
-    {{/each}}
-  </table>
+  (<a href='#' {{action 'toggleSuggesting'}}>Suggest product</a>)
 
-  {{#unless model.line_items}}
-    <p> You have not added any product yet, just click on the products on 
-        the left</p>
-  {{/unless}}
-  <button type="button" class="btn btn-default btn-lg btn-block" {{action 'closeOrder'}}>Close Order</button>
+  {{#if suggesting}}
+    <form role="form">
+    <div class='form-group'>
+      <label  class="control-label">Description</label>
+      {{input value=suggestionText class='form-control'}}
+    </div>
+    <button type="button" class="btn btn-default" {{action 'createSuggestion'}}>Create suggestion</button>
+  {{else}}
+    <table id='line-items'>
+      {{#each model.line_items}}
+        {{view App.OrderLineItemView}}
+      {{/each}}
+    </table>
+
+    {{#unless model.line_items}}
+      <p> You have not added any product yet, just click on the products on 
+          the left</p>
+    {{/unless}}
+
+
+    {{#if model.suggestions}}
+      <span class='heading' id="suggesting_heading">Suggestions</span>
+      <table id='suggestions'>
+        {{#each model.suggestions}}
+          {{view App.OrderSuggestionView}}
+        {{/each}}
+      </table>
+    {{/if}}
+
+    <button type="button" class="btn btn-default btn-lg btn-block" {{action 'closeOrder'}}>Close Order</button>
+  {{/if}}
 </div>

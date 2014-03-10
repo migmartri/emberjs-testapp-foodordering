@@ -10,6 +10,7 @@ Peoplefood::Application.routes.draw do
         end
       end
       resources :line_items
+      resources :suggestions
       resources :products
       resources :companies do
         collection do

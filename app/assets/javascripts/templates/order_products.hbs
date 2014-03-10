@@ -9,6 +9,9 @@
   {{else}}
     <div class='box'>
     	<h3>There are not products</h3>
+      {{#unless suggesting}}
+        <button {{action 'toggleSuggesting'}} class='btn btn-default'>Suggest a product</button>
+      {{/unless}}
     </div>
   {{/each}}
 </div>

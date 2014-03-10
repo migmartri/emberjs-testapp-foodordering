@@ -1,0 +1,10 @@
+<td>
+  {{text}}
+</td>
+<td class='remove-item'>
+  {{#if view.onHover}}
+    <a href="#" {{action 'removeSuggestion' this}}>
+      <i class='glyphicon glyphicon-remove'></i>
+    </a>
+  {{/if}}
+</td>
