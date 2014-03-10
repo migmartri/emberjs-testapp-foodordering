@@ -6,7 +6,7 @@
     <form role="form">
     <div class='form-group'>
       <label  class="control-label">Description</label>
-      {{input value=suggestionText class='form-control'}}
+        {{textarea value=suggestionText class='form-control'}}
     </div>
     <button type="button" class="btn btn-default" {{action 'createSuggestion'}}>Create suggestion</button>
   {{else}}

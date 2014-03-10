@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   def current_company
     return nil unless session[:current_company_id]
     @current_company ||= Company.find(session[:current_company_id])
+  rescue
+    return nil
   end
 
 
