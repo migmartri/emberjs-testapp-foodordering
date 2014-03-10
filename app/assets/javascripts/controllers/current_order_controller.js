@@ -39,7 +39,8 @@ App.CurrentOrderController = Ember.ObjectController.extend({
     closeOrder: function(){
       controller = this;
       $.post('/api/v1/orders/' + this.get('id') + '/close', function(){
-        controller.set('model', null);
+        controller.store.unloadAll('line_item');
+        controller.store.unloadAll('order');
         controller.transitionToRoute('index');
       });
     }

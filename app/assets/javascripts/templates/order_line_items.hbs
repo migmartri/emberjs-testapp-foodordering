@@ -5,5 +5,10 @@
       {{view App.OrderLineItemView}}
     {{/each}}
   </table>
+
+  {{#unless model.line_items}}
+    <p> You have not added any product yet, just click on the products on 
+        the left</p>
+  {{/unless}}
   <button type="button" class="btn btn-default btn-lg btn-block" {{action 'closeOrder'}}>Close Order</button>
 </div>
