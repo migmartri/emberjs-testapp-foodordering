@@ -1,6 +1,7 @@
 var attr = DS.attr;
 App.LineItem = DS.Model.extend({
   product: DS.belongsTo('product'),
+  title: attr(),
   // If we add the productId attribute the relationship does not work
   //productId: attr(),
   order: DS.belongsTo('order'),
