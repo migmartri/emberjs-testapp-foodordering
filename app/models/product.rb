@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
   #validates_attachment_file_name :picture, :matches => [/png\Z/, /jpe?g\Z/]
   do_not_validate_attachment_file_type :picture
 
+  validates :title, :company_id, presence: true
 
   has_many :line_items
 end
