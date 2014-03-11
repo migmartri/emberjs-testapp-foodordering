@@ -19,6 +19,9 @@
 //= require ember-data
 //= require plugins/masonry.pkgd.min.js
 //= require plugins/imagesloaded.pkgd.min.js
+//= require ember-addons.bs_for_ember/dist/js/bs-core.min
+//= require ember-addons.bs_for_ember/dist/js/bs-growl-notifications.min
+//= require ember-addons.bs_for_ember/dist/js/bs-notifications.min
 //= require bootstrap/dropdown
 //= require_self
 //= require ember-app
@@ -30,4 +33,3 @@ App = Ember.Application.create({
 });
 
 //= require_tree .
-//var msnry = new Masonry(document.querySelector('#order_products'), { itemSelector: '.product_item'});

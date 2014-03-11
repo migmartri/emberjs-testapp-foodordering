@@ -1,0 +1,20 @@
+{
+  "name": "Foodmatic",
+  "version": "0.0.1",
+  "authors": [
+    "Miguel Martinez Trivino (migmartri@gmail.com)"
+  ],
+  "description": "Ember.js test app",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember-addons.bs_for_ember": "~0.6.1"
+  }
+}
