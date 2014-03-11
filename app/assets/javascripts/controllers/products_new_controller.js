@@ -14,6 +14,9 @@ App.ProductsNewController = Ember.ObjectController.extend({
       product.save().then(function(){
         Bootstrap.GNM.push('Success!', 'The product has been created.', 'success');
         controller.transitionToRoute('products');
+      }, function(){
+        /* Used to show the validations */
+        controller.set('model', product);
       });
     }
   }
