@@ -6,6 +6,7 @@ App.CurrentOrderNewSuggestionController = Ember.ObjectController.extend({
   ],
   actions: {
     cancel: function(){
+      this.get('model').deleteRecord();
       this.transitionToRoute('currentOrder');
     },
     createSuggestion: function(){
@@ -16,6 +17,8 @@ App.CurrentOrderNewSuggestionController = Ember.ObjectController.extend({
         Bootstrap.GNM.push('Received!', "We'll think about it :)", 'success');
         self.transitionToRoute('currentOrder');
         Bootstrap.ModalManager.close('manualModal');
+      }, function(){
+        suggestion.set('order', null);
       });
     }
   }

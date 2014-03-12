@@ -13,13 +13,13 @@ class Api::V1::ProductsController < ApplicationController
 
   def create
     @product = current_company.products.create(product_params)
-    respond_with @product
+    respond_with @product, location: nil
   end
 
 
   def update
     @product = @product.update_attributes(product_params)
-    respond_with @product
+    respond_with @product, location: nil
   end
 
   def destroy
