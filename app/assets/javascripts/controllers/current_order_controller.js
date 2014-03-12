@@ -4,6 +4,7 @@ App.CurrentOrderController = Ember.ObjectController.extend({
     createOrder: function(){
       controller = this;
       this.store.createRecord("order").save().then(function(order){
+        Bootstrap.GNM.push('Success!', 'Order created!', 'success');
         controller.set('model', order);
       });
     },
@@ -19,12 +20,14 @@ App.CurrentOrderController = Ember.ObjectController.extend({
             elem = existing.get('content')[0];
             elem.incrQty().save();
           }else{
+            Bootstrap.GNM.push('Added!', product.get('title') + ' added!', 'success');
             store.createRecord("lineItem", {product: product, order: order}).save();
           }
       });
     },
     /* Line Items management */
     removeLineItem: function(li){
+      Bootstrap.GNM.push('Removed!', li.get('title') + ' removed!', 'success');
       li.destroyRecord();
     }, /* Supports negative num*/
     incrLineItem: function(li, num){
@@ -38,6 +41,7 @@ App.CurrentOrderController = Ember.ObjectController.extend({
     },
     closeOrder: function(){
       controller = this;
+      Bootstrap.GNM.push('Closed!', 'Order closed!', 'success');
       $.post('/api/v1/orders/' + this.get('id') + '/close', function(){
         controller.store.unloadAll('line_item');
         controller.store.unloadAll('order');
