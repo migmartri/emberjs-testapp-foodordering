@@ -9,12 +9,14 @@ App.OrderProductItemView = Ember.View.extend({
   },
   didInsertElement: function() {
     /* Do not reexecute it in every view, do it on the parent view */
-    container = this.$();
-    container.fadeIn();
-    container.imagesLoaded(function(){
-      $('#order_products').masonry({
-        itemSelector: '.product_item',
-      });
-    });
+    item = this.$();
+    item.fadeIn();
+    console.log(item);
+    //window.masonry.masonry('addItems', item);
+    //container.imagesLoaded(function(){
+    //  $('#order_products').masonry({
+    //    itemSelector: '.product_item',
+    //  });
+    //});
   }
 });
