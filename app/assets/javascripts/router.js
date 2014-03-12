@@ -1,7 +1,9 @@
 // For more information see: http://emberjs.com/guides/routing/
 
 App.Router.map(function() {
-  this.route('currentOrder', {path: '/c'});
+  this.resource('currentOrder', {path: '/c'}, function(){
+    this.route('new_suggestion', {path: '/suggestion/new' });
+  });
   this.resource('orders');
   this.resource('order', {
     path: '/o/:order_id'

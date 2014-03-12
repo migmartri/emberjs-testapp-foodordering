@@ -1,6 +1,7 @@
 <div class='form-group'>
   <label  class="control-label">Product title</label>
   {{view Ember.TextField valueBinding='title' class="form-control"}}
+  {{{show_errors errors.title}}}
 </div>
 <div class='form-group'>
   <label class="control-label">Picture</label>

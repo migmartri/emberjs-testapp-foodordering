@@ -1,7 +1,5 @@
 App.CurrentOrderController = Ember.ObjectController.extend({
   searchQuery: null,
-  suggesting: false,
-  suggestionText: null,
   actions: {
     createOrder: function(){
       controller = this;
@@ -48,17 +46,6 @@ App.CurrentOrderController = Ember.ObjectController.extend({
         controller.store.unloadAll('line_item');
         controller.store.unloadAll('order');
         controller.transitionToRoute('index');
-      });
-    },
-    toggleSuggesting: function(){
-      return this.set("suggesting", this.get('suggesting') ? false : true);
-    },
-    createSuggestion: function(){
-      self = this;
-      this.store.createRecord('suggestion', {order: this.get('model'), text: this.get('suggestionText')}).save().then(function(data){
-        Bootstrap.GNM.push('Created!', 'Suggestion created!', 'success');
-        self.set('suggesting', false);
-        self.set('suggestionText', null);
       });
     },
     removeSuggestion: function(sug){
