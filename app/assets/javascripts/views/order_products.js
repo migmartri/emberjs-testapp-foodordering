@@ -4,14 +4,15 @@ App.OrderProductsView = Ember.View.extend({
     this.scheduleMasonry();
   },
   scheduleMasonry: (function(){
-    console.log('Changed')
     Ember.run.scheduleOnce('afterRender', this, this.applyMasonry);
   }).observes('controller.products'),
     applyMasonry: function(){
-      setTimeout(function(){
-        this.$('#order_products').masonry({
+      if(window.masonry){
+        window.masonry.masonry('reloadItems');
+      }else{
+        window.masonry = this.$('#order_products').masonry({
           itemSelector: '.product_item',
         });
-      }, 1000)
+      }
     }
 });
