@@ -22,6 +22,7 @@
 //= require ember-addons.bs_for_ember/dist/js/bs-core.min
 //= require ember-addons.bs_for_ember/dist/js/bs-growl-notifications.min
 //= require ember-addons.bs_for_ember/dist/js/bs-notifications.min
+//= require ember-addons.bs_for_ember/dist/js/bs-modal.min
 //= require bootstrap/dropdown
 //= require_self
 //= require ember-app
