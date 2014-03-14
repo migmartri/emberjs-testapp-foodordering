@@ -8,12 +8,8 @@ App.OrderProductItemView = Ember.View.extend({
     this.set('hovered', false);
   },
   didInsertElement: function() {
-    //Ember.run.scheduleOnce('afterRender', this, this.addItemsToMasonry);
-    this.$().fadeIn();
-  },
-  addItemsToMasonry: function(){
-    item = this.$();
-    item.fadeIn();
-    //window.masonry.masonry('addItems', item, {itemSelector: '.product_item'});
+    Ember.run.scheduleOnce('afterRender', this, function(){
+      this.$().fadeIn();
+    });
   }
 });
