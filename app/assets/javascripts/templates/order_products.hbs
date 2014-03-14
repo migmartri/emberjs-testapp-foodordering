@@ -1,7 +1,9 @@
-<div class='col-sm-4'>
-  {{input type='search' value=searchQuery class="form-control" placeholder='Filter products' id='filter_products'}}
+<div class='row'>
+  <div class='col-sm-4'>
+    {{input type='search' value=searchQuery class="form-control" placeholder='Filter products' id='filter_products'}}
+  </div>
 </div>
-<div id='order_products' class='col-sm-12'>
+<div id='order_products'>
   {{#each this.products}}
     {{view App.OrderProductItemView}}
   {{else}}
