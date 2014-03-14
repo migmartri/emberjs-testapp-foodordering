@@ -1,17 +1,13 @@
-<div class='row'>
-	<div class='col-sm-4'>
-	  {{input type='search' value=searchQuery class="form-control" placeholder='Filter products' id='filter_products'}}
-	</div>
+<div class='col-sm-4'>
+  {{input type='search' value=searchQuery class="form-control" placeholder='Filter products' id='filter_products'}}
 </div>
-<div id='order_products'>
+<div id='order_products' class='col-sm-12'>
   {{#each this.products}}
     {{view App.OrderProductItemView}}
   {{else}}
     <div class='box'>
     	<h3>There are not products</h3>
-      {{#unless suggesting}}
-        <button {{action 'toggleSuggesting'}} class='btn btn-default'>Suggest a product</button>
-      {{/unless}}
+      {{#link-to 'currentOrder.new_suggestion' class='btn btn-default'}}Suggest product{{/link-to}}
     </div>
   {{/each}}
 </div>
