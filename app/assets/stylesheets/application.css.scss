@@ -78,6 +78,8 @@ input#filter_products{ margin: 0 0 10px 15px}
 #order_line_items{
   position: fixed;
   width: 350px;
+  /*overflow-y: scroll;
+  height: 90%;*/
   #suggesting_heading{margin-top:10px;}
   table#line-items, table#suggestions{
     width:100%;

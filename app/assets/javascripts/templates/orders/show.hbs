@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Order info</div>
+  <div class="panel-body">
+    <p> Created at: {{created_at}} </p>
+    <p> Closed at: {{closed_at}} </p>
+    <p> #items: {{lineItemsCount}} </p>
+  </div>
+</div>
+
+{{#if model.line_items}}
+  <div class="panel panel-default">
+    <div class="panel-heading">Order Items</div>
+    <div class="panel-body">
+        <table class="table">
+          <tr>
+            <th>Qty</th>
+            <th>Title</th>
+          </tr>
+          {{#each model.line_items}}
+            <tr>
+              <td>{{qty}}</td>
+              <td>{{title}}</td>
+            </tr>
+          {{/each}}
+        </table>
+    </div>
+  </div>
+{{/if}}

@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
 
   aasm do
     state :open, :initial => true
-    state :closed
+    state :closed, :before_enter => :set_closed_time
 
     event :close do
       transitions :from => :open, :to => :closed
@@ -19,5 +19,9 @@ class Order < ActiveRecord::Base
 
   def only_one_open
     errors.add(:aasm_state, "There is already an open order") if self.company.orders.open.count > 0
+  end
+
+  def set_closed_time
+    self.closed_at = Time.now
   end
 end

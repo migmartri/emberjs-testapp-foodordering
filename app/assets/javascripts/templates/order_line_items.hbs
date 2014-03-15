@@ -1,5 +1,6 @@
 <div class='box row' id='order_line_items'>
   <span class='heading'>Order Items</span>
+  <span class="badge">{{lineItemsCount}}</span>
   ({{#link-to 'currentOrder.new_suggestion'}}Suggest product{{/link-to}})
   <table id='line-items'>
     {{#each model.line_items}}

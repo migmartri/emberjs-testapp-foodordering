@@ -2,12 +2,6 @@
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <a class="navbar-brand" href="/">{{currentCompany.name}}</a>
     <ul class="nav navbar-nav">
-      {{#view App.NavView}}
-        {{#link-to 'currentOrder'}}Current order{{/link-to}}
-      {{/view}}
-      {{#view App.NavView}}
-        {{#link-to 'products'}}Manage products{{/link-to}}
-      {{/view}}
     </ul>
     <ul class='nav navbar-nav pull-right'>
       <li class='dropdown'>
@@ -16,7 +10,18 @@
           <i class='caret'></i>
           </a>
             <ul class='dropdown-menu'>
-              <li> <a href='#' {{action 'logout'}}>Logout</a></li>
+              {{#view App.NavView}}
+                {{#link-to 'currentOrder'}}Current order{{/link-to}}
+              {{/view}}
+              {{#view App.NavView}}
+                {{#link-to 'products'}}Manage products{{/link-to}}
+              {{/view}}
+              {{#view App.NavView}}
+                {{#link-to 'orders'}}Manage orders{{/link-to}}
+              {{/view}}
+              {{#view App.NavView}}
+                <a href='#' {{action 'logout'}}>Logout</a></li>
+              {{/view}}
            </ul>
       </li>
      </ul>

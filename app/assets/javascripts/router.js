@@ -4,10 +4,10 @@ App.Router.map(function() {
   this.resource('currentOrder', {path: '/c'}, function(){
     this.route('new_suggestion', {path: '/suggestion/new' });
   });
-  this.resource('orders');
-  this.resource('order', {
-    path: '/o/:order_id'
+  this.resource('orders', function(){
+   this.route('show', {path: '/orders/:order_id'});
   });
+  //this.resource('order', { path: '/o/:order_id' });
   this.resource('products', function(){
     this.route('new');
   });

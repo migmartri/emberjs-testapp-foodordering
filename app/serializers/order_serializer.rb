@@ -1,5 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
- attributes :id, :created_at
+ attributes :id, :created_at, :closed_at, :aasm_state
  has_many :line_items, embed: :id, key: :line_item_ids, include: true
  has_many :suggestions, embed: :id, key: :suggestion_ids, include: true
  #has_many :products, embed: :id, key: :product_ids, include: true
