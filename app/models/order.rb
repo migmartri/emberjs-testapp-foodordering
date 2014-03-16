@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
   has_many :suggestions
   has_many :products, through: :line_items
 
+  before_create :generate_order_number
   validates :company_id, presence: true
   validate :only_one_open, on: 'create'
 
@@ -23,5 +24,19 @@ class Order < ActiveRecord::Base
 
   def set_closed_time
     self.closed_at = Time.now
+  end
+
+  protected
+  def generate_order_number
+    possible_values = 'abfhijlqrstuxy'.upcase.split('') | '123456789'.split('')
+    debugger
+
+    record = true
+    while record
+      random = Array.new(5){possible_values[rand(possible_values.size)]}.join
+      random = Time.now.to_date.to_s + '-' + random
+      record = Order.where(order_number: random).first
+    end 
+    self.order_number = random
   end
 end

@@ -7,7 +7,7 @@
         {{#view App.NavView}}
             {{#link-to 'orders.show' this}}
               <span class="badge pull-right">{{lineItemsCount}}</span>
-              {{created_at}}
+              {{order_number}}
             {{/link-to}}
          {{/view}}
         {{/each}}

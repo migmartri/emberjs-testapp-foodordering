@@ -4,6 +4,7 @@ App.Order = DS.Model.extend({
   suggestions: DS.hasMany('suggestion'),
   created_at: attr(),
   closed_at: attr(),
+  order_number: attr(),
   aasm_state: attr(),
   lineItemsCount: (function(){
     var sum = 0;

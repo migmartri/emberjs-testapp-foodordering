@@ -1,7 +1,5 @@
 <div class='col-sm-8 col-sm-offset-2 box'>
   <h3>Available products
-  <a href='#' {{action 'show'}} class='btn btn-default'>Show modal</a>
-
   {{#link-to 'products.new' class='btn btn-default'}}New product{{/link-to}}
   </h3>
   {{outlet}}
@@ -13,7 +11,7 @@
         <th>Title</th>
         <th></th>
       </tr>
-      {{#each model}}
+      {{#each arrangedContent}}
         <tr>
           <td><img {{bind-attr src=picture_thumb}}"/></td>
           <td>{{title}}</td>
