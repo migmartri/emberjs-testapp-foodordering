@@ -2,7 +2,9 @@
   <div class='col-sm-8 col-sm-offset-2'>
     <form role="form">
       {{partial 'products/product_form'}}
+      <div class='form-group'>
+        <img {{bind-attr src="picture_medium"}}/>
+      </div>
     </form>
   </div>
 </div>
-

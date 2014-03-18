@@ -1,6 +1,9 @@
-App.ProductEditRoute = Ember.Route.extend({
+App.ProductsEditRoute = Ember.Route.extend({
   model: function(){
-  	/* TODO, we can not access to the parameter here, we need to access the object in the parent */
   	return this.modelFor('product');
+  },
+  setupController: function(controller, model) {
+    controller.set('model', model);
+    Bootstrap.ModalManager.open('manualModal', 'Update a product', 'products/edit', controller.dialogButtons, controller);
   }
 });

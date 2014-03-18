@@ -7,7 +7,8 @@ App.ProductsNewController = Ember.ObjectController.extend({
   ],
   actions: {
     cancel: function(){
-      this.get('model').deleteRecord();
+      if(this.get('model'))
+        this.get('model').deleteRecord();
       this.transitionToRoute('products');
     },
     create: function(){

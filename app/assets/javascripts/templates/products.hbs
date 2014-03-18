@@ -1,7 +1,6 @@
 <div class='col-sm-8 col-sm-offset-2 box'>
-  <h3>Available products
-  {{#link-to 'products.new' class='btn btn-default'}}New product{{/link-to}}
-  </h3>
+  {{#link-to 'products.new' class='btn btn-default pull-right'}}New product{{/link-to}}
+  <div class='heading'>Available products </div>
   {{outlet}}
   <section>
   {{#if model}}
@@ -23,7 +22,7 @@
               </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                 <li role="presentation">
-                  {{#link-to 'product.edit' this}}
+                  {{#link-to 'products.edit' this}}
                     <i class="fa fa-pencil-square-o"></i>
                     Edit
                   {{/link-to}}
