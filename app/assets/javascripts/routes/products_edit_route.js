@@ -4,6 +4,14 @@ App.ProductsEditRoute = Ember.Route.extend({
   },
   setupController: function(controller, model) {
     controller.set('model', model);
-    Bootstrap.ModalManager.open('manualModal', 'Update a product', 'products/edit', controller.dialogButtons, controller);
+    modal = Bootstrap.ModalManager.open('manualModal', 'Update a product', 'products/edit', controller.dialogButtons, controller);
+
+    /* Transition to route when closing the popup */
+    modal.reopen({
+      close: function(){
+        this.destroy();
+        controller.transitionToRoute('products');
+      }
+    });
   }
 });

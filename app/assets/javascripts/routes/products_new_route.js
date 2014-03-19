@@ -3,6 +3,14 @@ App.ProductsNewRoute = Ember.Route.extend({
     controller.set('title', null);
     controller.set('upload_picture', null);
     controller.set('model', null);
-    Bootstrap.ModalManager.open('manualModal', 'Create a product', 'products/new', controller.dialogButtons, controller);
+    modal = Bootstrap.ModalManager.open('manualModal', 'Create a product', 'products/new', controller.dialogButtons, controller);
+
+    /* Transition to route when closing the popup */
+    modal.reopen({
+      close: function(){
+        this.destroy();
+        controller.transitionToRoute('products');
+      }
+    });
   }
 });
