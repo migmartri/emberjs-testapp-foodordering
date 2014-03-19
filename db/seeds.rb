@@ -1,13 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+require 'net/http'
+require 'uri'
 
-company = Company.create name: Faker::Company.name, code: 'btt'
+company = Company.find_or_create_by_name name: 'Demo company', code: 'demo'
 
-38.times do
-  company.products.create title: Faker::Commerce.product_name
+CSV.foreach(File.join(Rails.root, 'resources', "import.csv"), :headers => true, :encoding => 'utf-8') do |row|
+
+  puts "Importing #{row[0]}"
+  product = company.products.find_or_initialize_by_title title: row[0]
+  image_url = File.join("https://dl.dropboxusercontent.com/u/200236/food_images/", row[1]) if row[1]
+  
+  if image_url
+    uri = URI.parse(image_url)
+    Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+      resp = http.get(uri.path)
+      file = Tempfile.new(['picture', '.' + row[1].scan(/(png|jpe?g|gif)/).first.first], '/tmp', 'wb+')
+      file.write(resp.body.force_encoding("UTF-8"))
+      file.flush
+      product.picture = file
+    end
+  end
+  product.save!
 end
+

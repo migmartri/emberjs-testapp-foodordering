@@ -20,14 +20,12 @@ App.CurrentOrderController = Ember.ObjectController.extend({
             elem = existing.get('content')[0];
             elem.incrQty().save();
           }else{
-            Bootstrap.GNM.push('Added!', product.get('title') + ' added!', 'success');
             store.createRecord("lineItem", {product: product, order: order}).save();
           }
       });
     },
     /* Line Items management */
     removeLineItem: function(li){
-      Bootstrap.GNM.push('Removed!', li.get('title') + ' removed!', 'success');
       li.destroyRecord();
     }, /* Supports negative num*/
     incrLineItem: function(li, num){
