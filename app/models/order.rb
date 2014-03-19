@@ -29,7 +29,6 @@ class Order < ActiveRecord::Base
   protected
   def generate_order_number
     possible_values = 'abfhijlqrstuxy'.upcase.split('') | '123456789'.split('')
-    debugger
 
     record = true
     while record
