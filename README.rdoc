@@ -1,6 +1,6 @@
 == README
 
-This is just a simple app with the sole purpose of learning emberjs along with a Ruby on Rails backend.
+**Simple Ember.js + Ruby on Rails app built for learning purposes**
 
 === The application
 
@@ -22,12 +22,11 @@ My goals for this project are:
 * Websockets + emberdata
 * ...
 
-I know that the code here probably stinks but well, it is my first ember app and I'll be happy to know the ember way to do things :)
+I know that the code here probably stinks. It is my first ember app so I'll be happy to know and discuss the "ember way" to do things :)
 
 Also, feel free to modify the app, it is just for learning purposes so it would be great if we can add, discuss and remove features together.
 
-Let's just learn ember using this playground!
-
+Let's learn ember using this playground!
 
 
 === Installation Requirements
@@ -52,4 +51,4 @@ The installation process should have created a test company which access code is
 
 You are ready to go! :)
 
-
+Miguel Angel Martinez - @migmartri
