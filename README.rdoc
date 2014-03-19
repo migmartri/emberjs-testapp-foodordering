@@ -1,6 +1,6 @@
 == README
 
-**Simple Ember.js + Ruby on Rails app built for learning purposes**
+Basic Ember.js + Ruby on Rails app built for learning purposes
 
 === The application
 
