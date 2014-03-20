@@ -1,5 +1,5 @@
 Peoplefood::Application.routes.draw do
-  #get "welcome/app"
+  get "welcome/app"
   root 'welcome#app'
 
   namespace :api do
@@ -21,5 +21,5 @@ Peoplefood::Application.routes.draw do
     end
   end
 
-  get '*url' => 'welcome#app'
+  #get '*url' => 'welcome#app'
 end

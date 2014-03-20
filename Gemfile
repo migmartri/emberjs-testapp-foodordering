@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.4'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem "active_model_serializers"
 gem 'haml'
+
 gem 'ember-rails'
 gem 'ember-source', '1.4.0' # or the version you need
 gem 'aasm'
@@ -49,7 +50,7 @@ end
 # Use unicorn as the app server
 # gem 'unicorn'
 gem 'thin'
-#
+
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
