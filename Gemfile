@@ -13,6 +13,9 @@ gem 'ember-source', '1.4.0' # or the version you need
 gem 'aasm'
 gem 'jquery-ui-rails'
 
+# Serve static assets Heroku
+gem 'rails_12factor', group: :production
+
 
 # Bootstrap 3
 gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git'
