@@ -42,8 +42,7 @@ App.CurrentOrderController = Ember.ObjectController.extend({
       Bootstrap.GNM.push('Closed!', 'Order closed!', 'success');
       $.post('/api/v1/orders/' + this.get('id') + '/close', function(){
         controller.store.unloadAll('line_item');
-        controller.store.unloadAll('order');
-        controller.transitionToRoute('index');
+        controller.transitionToRoute('orders.show', controller.get('model'));
       });
     },
     removeSuggestion: function(sug){
