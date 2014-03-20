@@ -17,7 +17,7 @@
  */
 
 body{
-  background: url('/assets/bg.png');
+  background: url(asset-path('bg.png'));
   background-attachment: fixed;
   padding-top: 70px;
   .board{

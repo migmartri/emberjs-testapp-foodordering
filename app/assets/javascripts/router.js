@@ -13,14 +13,12 @@ App.Router.map(function() {
     this.route('new');
     this.route('edit', {path: '/:product_id/edit'});
   });
-  //this.resource('product', {path: '/admin/products/:product_id'}, function(){
-  //  this.route('edit');
-  //});
 
 });
 
 
 App.Router.reopen({
-  location: 'history'
+  location: 'history',
+  rootURL: '/app'
 });
 
