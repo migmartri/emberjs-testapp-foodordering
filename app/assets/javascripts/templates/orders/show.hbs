@@ -11,18 +11,35 @@
   <div class="panel panel-default">
     <div class="panel-heading">Order Items</div>
     <div class="panel-body">
-        <table class="table">
-          <tr>
-            <th>Qty</th>
-            <th>Title</th>
-          </tr>
-          {{#each model.line_items}}
+        <table class="table table-hover">
+          <thead>
             <tr>
-              <td>{{qty}}</td>
-              <td>{{title}}</td>
+              <th>Qty</th>
+              <th>Title</th>
             </tr>
-          {{/each}}
+          </thead>
+          <tbody>
+            {{#each model.line_items}}
+              <tr>
+                <td>{{qty}}</td>
+                <td>{{title}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
         </table>
+    </div>
+  </div>
+{{/if}}
+
+{{#if model.suggestions}}
+  <div class="panel panel-default">
+    <div class="panel-heading">Order Suggestions</div>
+    <div class="panel-body">
+      {{#each model.suggestions}}
+        <div class='well'>
+          {{text}}
+        </div>
+      {{/each}}
     </div>
   </div>
 {{/if}}

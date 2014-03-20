@@ -3,7 +3,6 @@ class Api::V1::LineItemsController < ApplicationController
   #before_filter :load_order
 
   def create
- #   @order = Order.create
     @line_item = LineItem.create(line_items_params)
     render json: @line_item
   end
@@ -15,8 +14,6 @@ class Api::V1::LineItemsController < ApplicationController
 
   def destroy
     respond_with LineItem.find(params[:id]).destroy
-
-
   end
 
   def line_items_params
