@@ -1,0 +1,12 @@
+<span class='heading'>Order Items</span>
+<span class="badge">{{lineItemsCount}}</span>
+({{#link-to 'currentOrder.new_suggestion'}}Suggest product{{/link-to}})
+<table id='line-items'>
+  {{#each arrangedContent}}
+    {{view App.OrderLineItemView}}
+  {{/each}}
+</table>
+
+{{#unless model}}
+  <p> You have not added any product yet, just click on the products on the left</p>
+{{/unless}}

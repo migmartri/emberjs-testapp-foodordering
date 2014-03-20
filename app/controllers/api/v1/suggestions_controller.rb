@@ -6,7 +6,6 @@ class Api::V1::SuggestionsController < ApplicationController
   def create
     @suggestion = @order.suggestions.create(suggestion_params)
     respond_with @suggestion, location: nil
-    #render json: @suggestion
   end
 
   def destroy
