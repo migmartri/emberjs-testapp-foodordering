@@ -9,8 +9,7 @@
   </table>
 
   {{#unless model.line_items}}
-    <p> You have not added any product yet, just click on the products on 
-        the left</p>
+    <p> You have not added any product yet, just click on the products on the left</p>
   {{/unless}}
 
 
@@ -23,5 +22,5 @@
     </table>
   {{/if}}
 
-    <button type="button" class="btn btn-default btn-lg btn-block" {{action 'closeOrder'}}>Close Order</button>
+  <button type="button" class="btn btn-default btn-lg btn-block" {{action 'closeOrder'}}>Close Order</button>
 </div>
