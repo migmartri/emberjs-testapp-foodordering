@@ -25,6 +25,7 @@
 //= require ember-addons.bs_for_ember/dist/js/bs-modal.min
 //= require ember-addons.bs_for_ember/dist/js/bs-button.min
 //= require bootstrap/dropdown
+//= require bootstrap/collapse
 //= require_self
 //= require ember-app
 

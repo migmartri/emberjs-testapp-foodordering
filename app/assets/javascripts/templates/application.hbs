@@ -1,30 +1,38 @@
 {{#if currentCompany.isSignedIn}}
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <a class="navbar-brand" href="/">{{currentCompany.name}}</a>
-    <ul class="nav navbar-nav">
-    </ul>
-    <ul class='nav navbar-nav pull-right'>
-      {{#view App.NavView}}
-        {{#link-to 'currentOrder'}}Current order{{/link-to}}
-      {{/view}}
-      {{#view App.NavView}}
-        {{#link-to 'products'}}Manage products{{/link-to}}
-      {{/view}}
-      {{#view App.NavView}}
-        {{#link-to 'orders'}}Manage orders{{/link-to}}
-      {{/view}}
-      <li class='dropdown'>
-        <a href='#' class='dropdown-toggle navbar-link' data-toggle="dropdown">
-          {{currentCompany.name}}
-          <i class='caret'></i>
-          </a>
-            <ul class='dropdown-menu'>
-              {{#view App.NavView}}
-                <a href='#' {{action 'logout'}}>Logout</a></li>
-              {{/view}}
-           </ul>
-      </li>
-     </ul>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">FoodMatic</a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main_bar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="main_bar">
+      <ul class='nav navbar-nav pull-right'>
+        {{#view App.NavView}}
+          {{#link-to 'currentOrder'}}Current order{{/link-to}}
+        {{/view}}
+        {{#view App.NavView}}
+          {{#link-to 'products'}}Manage products{{/link-to}}
+        {{/view}}
+        {{#view App.NavView}}
+          {{#link-to 'orders'}}Manage orders{{/link-to}}
+        {{/view}}
+        <li class='dropdown'>
+          <a href='#' class='dropdown-toggle navbar-link' data-toggle="dropdown">
+            {{currentCompany.name}}
+            <i class='caret'></i>
+            </a>
+              <ul class='dropdown-menu'>
+                {{#view App.NavView}}
+                  <a href='#' {{action 'logout'}}>Logout</a></li>
+                {{/view}}
+             </ul>
+        </li>
+       </ul>
+     </div>
   </nav>
 {{/if}}
 <div id='container' class='container'>
