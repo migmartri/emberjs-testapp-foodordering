@@ -20,17 +20,12 @@
         {{#view App.NavView}}
           {{#link-to 'orders'}}Manage orders{{/link-to}}
         {{/view}}
-        <li class='dropdown'>
-          <a href='#' class='dropdown-toggle navbar-link' data-toggle="dropdown">
-            {{currentCompany.name}}
-            <i class='caret'></i>
-            </a>
-              <ul class='dropdown-menu'>
-                {{#view App.NavView}}
-                  <a href='#' {{action 'logout'}}>Logout</a></li>
-                {{/view}}
-             </ul>
-        </li>
+
+      </ul>
+      <ul class='nav navbar-nav pull-right'>
+        {{#view App.NavView}}
+          <a href='#' {{action 'logout'}}>Logout</a></li>
+        {{/view}}
        </ul>
      </div>
   </nav>

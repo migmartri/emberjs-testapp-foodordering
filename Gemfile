@@ -15,6 +15,8 @@ gem 'jquery-ui-rails'
 
 # Serve static assets Heroku
 gem 'rails_12factor', group: :production
+gem 'sprockets_better_errors' # Not needed in Rails 4.1
+
 
 
 # Bootstrap 3

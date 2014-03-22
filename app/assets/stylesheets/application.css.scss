@@ -75,10 +75,9 @@ body{
     }
   }
   #order_line_items{
-    //position: fixed;
-    //width: 350px;
-    /*overflow-y: scroll;
-    height: 90%;*/
+    position: fixed;
+    //overflow-y: scroll;
+    max-height: 90%;
     #suggesting_heading{margin-top:10px;}
     table#line-items, table#suggestions{
       width:100%;
