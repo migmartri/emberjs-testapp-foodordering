@@ -1,5 +1,5 @@
 App.CurrentOrderLineItemsController = Ember.ArrayController.extend({
-  sortProperties: ['updated_at'],
+  sortProperties: ['created_at'],
   sortAscending: false,
   lineItemsCount: (function(){
     var sum = 0;

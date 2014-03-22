@@ -20,7 +20,7 @@ App.CurrentOrderController = Ember.ObjectController.extend({
             elem = existing.get('content')[0];
             elem.incrQty().save();
           }else{
-            store.createRecord("lineItem", {product: product, order: order}).save();
+            store.createRecord("lineItem", {product: product, order: order, created_at: new Date()}).save();
           }
       });
     },
