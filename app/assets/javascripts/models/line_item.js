@@ -5,14 +5,10 @@ App.LineItem = DS.Model.extend({
   // If we add the productId attribute the relationship does not work
   //productId: attr(),
   order: DS.belongsTo('order'),
-  updated_at: attr(),
+  updatedAt: attr(),
   qty: attr('number', {defaultValue: 1}),
   incrQty: function(){
     this.set('qty', this.get('qty') + 1);
     return this;
-  },
-  setUpdated: (function(){
-    /* Used for sorting the line items in the right column */
-    this.set('updated_at', new Date());
-  }).observes('qty')
+  }
 });

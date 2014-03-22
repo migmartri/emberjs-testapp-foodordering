@@ -1,4 +1,5 @@
 App.CurrentOrderNewSuggestionController = Ember.ObjectController.extend({
+  text: null,
   needs: ['currentOrder'],
   manualButtons: [
     Ember.Object.create({title: 'Create', clicked: "createSuggestion"}),
@@ -6,19 +7,22 @@ App.CurrentOrderNewSuggestionController = Ember.ObjectController.extend({
   ],
   actions: {
     cancel: function(){
-      this.get('model').deleteRecord();
       this.transitionToRoute('currentOrder');
     },
     createSuggestion: function(){
       self = this;
-      suggestion = this.get('model');
-      suggestion.set('order', this.get('controllers.currentOrder').get('model'));
+
+      suggestion = this.store.createRecord('suggestion', {
+        text: this.get('text'),
+        order: this.get('controllers.currentOrder').get('model')
+      });
+
       suggestion.save().then(function(data){
         Bootstrap.GNM.push('Received!', "We'll think about it :)", 'success');
         self.transitionToRoute('currentOrder');
         Bootstrap.ModalManager.close('manualModal');
       }, function(){
-        suggestion.set('order', null);
+        suggestion.destroyRecord();
       });
     }
   }
