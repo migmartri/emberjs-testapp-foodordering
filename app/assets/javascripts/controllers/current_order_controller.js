@@ -1,13 +1,6 @@
 App.CurrentOrderController = Ember.ObjectController.extend({
   searchQuery: null,
   actions: {
-    createOrder: function(){
-      controller = this;
-      this.store.createRecord("order").save().then(function(order){
-        Bootstrap.GNM.push('Success!', 'Order created!', 'success');
-        controller.set('model', order);
-      });
-    },
     /* Add new Item to the line items*/
     addItem: function(product) {
       order = this.get('model');

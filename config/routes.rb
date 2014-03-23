@@ -3,6 +3,9 @@ Peoplefood::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :orders do
+        collection do
+          get :current
+        end
         member do
           post :close
         end

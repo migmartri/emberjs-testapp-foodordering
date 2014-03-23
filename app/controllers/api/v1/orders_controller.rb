@@ -3,16 +3,11 @@ class Api::V1::OrdersController < ApplicationController
   before_filter :load_order
 
   def index
-    if params[:current]
-      respond_with current_company.orders.open
-    else
-      respond_with current_company.orders.all
-    end
+    respond_with current_company.orders.all
   end
 
-  def create
-    @order = current_company.orders.create
-    respond_with @order, location: nil
+  def current
+    respond_with current_company.orders.find_or_create_by_aasm_state(aasm_state: 'open')
   end
 
   def show

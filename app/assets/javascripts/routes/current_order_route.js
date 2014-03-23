@@ -1,9 +1,8 @@
 App.CurrentOrderRoute = Ember.Route.extend({
-  /* TODO rewrite this so we don't need to get the first object */
   model: function() {
-    return this.store.find("order", {current: true});
-  },
-  setupController: function(controller, model){
-    controller.set('model', model.get('firstObject'));
+    self = this;
+    return $.getJSON('/api/v1/orders/current').then(function(payload) {
+      return self.store.find('order', payload.order.id);
+    });
   }
 });
