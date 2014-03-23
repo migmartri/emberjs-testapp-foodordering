@@ -12,7 +12,7 @@ class Api::V1::OrdersController < ApplicationController
 
   def create
     @order = current_company.orders.create
-    render json: @order
+    respond_with @order, location: nil
   end
 
   def show
@@ -21,7 +21,7 @@ class Api::V1::OrdersController < ApplicationController
 
   def close
     @order.close!
-    render json: @order
+    respond_with @order, location: nil
   end
 
   def load_order
