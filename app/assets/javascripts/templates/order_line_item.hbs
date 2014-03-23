@@ -2,7 +2,7 @@
   {{#if view.onHover}}
     <a href='#'><i class="fa fa-caret-up" {{action 'incrLineItem' this 1}}></i></a>
   {{/if}}
-  {{this.qty}}
+  <span> {{this.qty}} </span>
   {{#if view.onHover}}
     <a href='#'><i class="fa fa-caret-down" {{action 'incrLineItem' this -1}}></i></a>
   {{/if}}

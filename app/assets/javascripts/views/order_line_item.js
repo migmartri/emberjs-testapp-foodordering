@@ -9,6 +9,6 @@ App.OrderLineItemView = Ember.View.extend({
     this.set('onHover', false);
   },
   qtyDidChange: function() {
-    this.$('.qty span').effect('highlight', 1000);
+    this.$('.qty span').effect('highlight', 500);
   }.observes('context.qty')
 });
