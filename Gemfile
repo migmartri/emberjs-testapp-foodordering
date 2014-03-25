@@ -35,6 +35,7 @@ gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
 
 gem 'websocket-rails'
+gem 'coffee-script' # Required by websocket-rails
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

@@ -50,6 +50,10 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.7.0)
     columnize (0.3.6)
     daemons (1.1.9)
     debugger (1.6.6)
@@ -191,6 +195,7 @@ DEPENDENCIES
   active_model_serializers
   aws-sdk
   bootstrap-sass!
+  coffee-script
   debugger
   ember-rails
   ember-source (= 1.4.0)
