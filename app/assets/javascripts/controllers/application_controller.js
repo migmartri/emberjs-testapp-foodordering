@@ -9,5 +9,11 @@ App.ApplicationController = Ember.ObjectController.extend({
         }
       );
     }
-  }
+  },
+  currentPathDidChange: function() {
+    App.set('currentPath', this.get('currentPath'));
+  }.observes('currentPath'),
+  inCurrentOrder: function(){
+    return this.get('currentPath') == 'currentOrder.index';
+  }.property('currentPath')
 });
