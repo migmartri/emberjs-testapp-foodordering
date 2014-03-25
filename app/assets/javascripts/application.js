@@ -27,6 +27,7 @@
 //= require momentjs/min/moment.min
 //= require bootstrap/dropdown
 //= require bootstrap/collapse
+//= require websocket_rails/main
 //= require_self
 //= require ember-app
 
@@ -44,3 +45,4 @@ $(document).ready(function() {
     $('.row-offcanvas').toggleClass('active');
   });
 });
+

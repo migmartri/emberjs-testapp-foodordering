@@ -6,17 +6,19 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem "active_model_serializers"
-gem 'haml'
+gem 'aasm'
 
 gem 'ember-rails'
 gem 'ember-source', '1.4.0' # or the version you need
-gem 'aasm'
 gem 'jquery-ui-rails'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+gem 'haml'
+
 
 # Serve static assets Heroku
 gem 'rails_12factor', group: :production
 gem 'sprockets_better_errors' # Not needed in Rails 4.1
-
 
 
 # Bootstrap 3
@@ -32,12 +34,10 @@ gem 'uglifier', '>= 1.3.0'
 gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
 
+gem 'websocket-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
