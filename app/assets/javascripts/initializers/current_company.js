@@ -7,7 +7,9 @@
       if (attributes) {
         company = store.createRecord("company", JSON.parse(attributes));
         controller = container.lookup('controller:currentCompany').set('content', company);
-        return container.typeInjection('controller', 'currentCompany', 'controller:currentCompany');
+      }else{
+        controller = container.lookup('controller:currentCompany');
       }
+      return container.typeInjection('controller', 'currentCompany', 'controller:currentCompany');
     }
   });

@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "ember-addons.bs_for_ember": "~0.6.1"
+    "ember-addons.bs_for_ember": "~0.6.1",
+    "momentjs": "~2.5.1"
   }
 }
