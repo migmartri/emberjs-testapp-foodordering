@@ -1,6 +1,6 @@
 App.OrderProductItemView = Ember.View.extend({
   templateName: 'order_product_item',
-  classNames: ['col-lg-3 col-md-4', 'col-sm-6', 'col-xs-6', 'product_item'],
+  classNames: ['product_item'],
   mouseEnter: function(){
     this.set('hovered', true);
   },

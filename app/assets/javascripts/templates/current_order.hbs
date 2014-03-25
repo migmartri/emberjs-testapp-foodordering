@@ -1,14 +1,17 @@
-<div class="row row-offcanvas row-offcanvas-right">
-  <div class='col-md-8 col-sm-7 col-xs-12'>
-    {{view 'App.OrderProductsView'}}
-  </div>
-  <div class='col-md-4 col-sm-5 col-xs-6 sidebar-offcanvas' id="sidebar">
-    <div class='box row' id='order_line_items'>
+<div id='current_order_container'>
+  <div class='box' id="sidebar">
+    <!--<div class='col-md-4 col-sm-5 col-xs-6 sidebar-offcanvas' id="sidebar">-->
+    <div class='row' id='order_line_items'>
       {{render "CurrentOrderLineItems" this.line_items}}
       {{render "CurrentOrderSuggestions" this.suggestions}}
-      {{#if model.line_items}}
-        <button type="button" class="btn btn-default btn-lg btn-block" {{action 'closeOrder'}}>Close Order</button>
-      {{/if}}
     </div>
+    {{#if model.line_items}}
+      <div>
+      <button type="button" class="btn btn-default btn-lg btn-block" {{action 'closeOrder'}} id='close_order'>Close Order</button>
+    </div>
+    {{/if}}
+  </div>
+  <div class='col-sm-12'>
+    {{view 'App.OrderProductsView'}}
   </div>
 </div>

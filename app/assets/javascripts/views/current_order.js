@@ -4,7 +4,7 @@ App.CurrentOrderView = Ember.View.extend({
     Ember.run.scheduleOnce('afterRender', this, function(){
       /* SideBar toggle */
       $('[data-toggle=offcanvas]').click(function() {
-        $('.row-offcanvas').toggleClass('active');
+        $('#sidebar').toggleClass('active');
       });
     });
   }

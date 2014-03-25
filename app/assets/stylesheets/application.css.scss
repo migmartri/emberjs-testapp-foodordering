@@ -44,110 +44,105 @@ body{
       margin-bottom: 20px;
     }
   }
-  #filter_products{ margin: 0 0 10px 15px}
-  #order_products{
-    .product_item{
-      display:none;
-      .box{
-        padding: 0px;
-        cursor:pointer;
-        .header{
-          text-align:center;
-          padding: 5px 10px;
+  #current_order_container{
+    margin-right: 360px;
+    #sidebar{
+      position: fixed;
+      right: 0;
+      top: 50px;
+      height: 100%;
+      width: 365px;
+      z-index: 1000;
+      #order_line_items{
+        overflow-y: auto;
+        height: 90%;
+        #suggesting_heading{margin-top:10px;}
+        table#line-items, table#suggestions{
+          width:100%;
+          td{
+            padding: 12px 8px;
+          }
         }
-      }
-      .image{
-        position: relative;
-        h2{ 
-           position: absolute; 
-           top: 0px; 
-           left: 0; 
-           width: 100%; 
-           span { 
-              color: white; 
-              font: bold 1em/1em Helvetica, Sans-Serif; 
-              letter-spacing: -1px;  
-              background: rgb(0, 0, 0); /* fallback color */
-              background: rgba(0, 0, 0, 0.7);
-              padding: 10px; 
-           }
+        .line-item, .suggestion{
+          border-bottom: 1px solid #eee;
+          padding: 10px 0;
+          height: 85px;
+          margin-bottom: 5px;
+          .qty{
+            width: 35px;
+            min-height: 50px;
+            text-align: center;
+          }
+          .img{
+            padding: 15px 0;
+            width: 60px;
+          }
+          .title{
+            width: 200px;
+          }
+          .remove-item{
+            width:40px;
+          }
         }
       }
     }
-  }
-  #order_line_items{
-    position: fixed;
-    //overflow-y: scroll;
-    max-height: 90%;
-    #suggesting_heading{margin-top:10px;}
-    table#line-items, table#suggestions{
-      width:100%;
-      td{
-        padding: 12px 8px;
-      }
-    }
-    .line-item, .suggestion{
-      border-bottom: 1px solid #eee;
-      padding: 10px 0;
-      height: 85px;
-      margin-bottom: 5px;
-      .qty{
-        width: 35px;
-        min-height: 50px;
-        text-align: center;
-      }
-      .img{
-        padding: 15px 0;
-        width: 60px;
-      }
-      .title{
-        width: 200px;
-      }
-      .remove-item{
-        width:40px;
+    #filter_products{ margin: 0 0 10px 15px}
+    #order_products{
+      .product_item{
+        width: 250px;
+        float:left;
+        display:none;
+        padding-left: 20px;
+        .box{
+          padding: 0px;
+          cursor:pointer;
+          .header{
+            text-align:center;
+            padding: 5px 10px;
+          }
+        }
+        .image{
+          position: relative;
+          h2{ 
+             position: absolute; 
+             top: 0px; 
+             left: 0; 
+             width: 100%; 
+             span { 
+                color: white; 
+                font: bold 1em/1em Helvetica, Sans-Serif; 
+                letter-spacing: -1px;  
+                background: rgb(0, 0, 0); /* fallback color */
+                background: rgba(0, 0, 0, 0.7);
+                padding: 10px; 
+             }
+          }
+        }
       }
     }
   }
 
 /* collapsed sidebar styles */
-@media screen and (max-width: 767px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-  }
-  .row-offcanvas-right
-  .sidebar-offcanvas {
-    right: -51.6%;
-  }
-
-  .row-offcanvas-left
-  .sidebar-offcanvas {
-    left: -41.6%;
-  }
-  .row-offcanvas-right.active {
-    right: 51.6%;
-  }
-  .row-offcanvas-left.active {
-    left: 41.6%;
-  }
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 51.6%;
-  }
-  #sidebar {
-    padding-top:0;
-  }
-  #sidebar .nav .caret {
-    border-top-color: #fff;
-    border-bottom-color: #fff;
-  }
-  #sidebar .nav a:hover .caret{
-    border-top-color: #fff;
-    border-bottom-color: #fff;
+@media screen and (max-width: 917px) {
+  #current_order_container{
+    #order_products{
+      .product_item{width:50%}
+    }
   }
 }
 
+@media screen and (max-width: 767px) {
+  #sidebar {
+    display:none;
+    &.active{
+      display: block;
+    }
+  }
+  #current_order_container{
+    margin-right: 0;
+    #order_products{
+      .product_item{width:50%}
+    }
+  }
+}
 }
