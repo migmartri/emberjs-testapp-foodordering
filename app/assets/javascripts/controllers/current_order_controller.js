@@ -6,8 +6,8 @@ App.CurrentOrderController = Ember.ObjectController.extend({
       order = this.get('model');
       var store = this.store;
 
-      var existing = this.store.filter('lineItem', function(li) { 
-        return li.get('product').get('id') == product.get('id');
+      var existing = this.store.filter('lineItem', function(li) {
+        return (li.get('order').get('id') == order.get('id')) && li.get('product').get('id') == product.get('id');
       }).then(function(existing) {
           if(existing.get('length') > 0){
             elem = existing.get('content')[0];
