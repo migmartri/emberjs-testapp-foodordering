@@ -2,7 +2,7 @@
 
 Basic Ember.js + Ruby on Rails app built for learning purposes
 
-DEMO at http://foodmatic.herokuapp.com/ (access code: 'demo')
+Demo app can be found at http://foodmatic.herokuapp.com (access code: 'demo')
 
 === The application
 
