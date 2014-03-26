@@ -8,8 +8,13 @@ App.OrderProductItemView = Ember.View.extend({
     this.set('hovered', false);
   },
   didInsertElement: function() {
+    var $item = this.$();
+    $item.hide();
     Ember.run.scheduleOnce('afterRender', this, function(){
-      this.$().fadeIn();
+      this.$().imagesLoaded().progress( function( imgLoad, image ) {
+        $item.show();
+        App.masonry.masonry( 'appended', $item );
+      });
     });
   }
 });
