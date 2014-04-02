@@ -44,6 +44,8 @@ App.CurrentOrderController = Ember.ObjectController.extend({
       sug.destroyRecord();
     }
   },
+
+
   loadProducts: function(){
     controller = this;
     if(controller.get('model')){
@@ -53,11 +55,51 @@ App.CurrentOrderController = Ember.ObjectController.extend({
       });
     }
   }.observes('model'),
+
+
   searchedContent: function() {
     var regexp = new RegExp(this.get('searchQuery'), 'i');
     filtered = this.get('all_products').filter(function(item) {
       return regexp.test(item.get('title'));
     });
     controller.set('products', filtered);
-  }.observes('searchQuery')
+  }.observes('searchQuery'),
+
+
+  initialize_websockets: function(){
+    var controller = this;
+    /* Creating websocket connection */
+    var dispatcher = new WebSocketRails(window.location.host + '/websocket');
+    dispatcher.on_open = function(data) {
+      console.info('Websockets connection stablished');
+    }
+    /* Channel */
+    var channel = dispatcher.subscribe('order-' + this.get('model').get('id'));
+
+    /* Line Item updated */
+    channel.bind('line_item_updated', function(data) {
+      controller.store.find('line_item', data.id).then(function(e){
+        e.set('qty', data.qty);
+      });
+    });
+
+    channel.bind('line_item_created', function(data) {
+      //controller.store.find('product', data.product_id).then(function(product){
+      //  order = controller.get('model');
+      //  controller.store.createRecord("lineItem", {id: data.id, product: product, order: order,
+      //                     created_at: new Date(),
+      //                     title: product.get('title')}).save();
+      //  });
+    });
+
+    channel.bind('line_item_deleted', function(data) {
+      controller.store.find('line_item', data.id).then(function(e){
+        e.deleteRecord();
+      });
+    });
+
+    channel.bind('order_closed', function(data) {
+      console.warn('order closed: ' + data);
+    });
+  }
 });

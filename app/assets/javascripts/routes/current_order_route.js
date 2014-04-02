@@ -9,5 +9,9 @@ App.CurrentOrderRoute = Ember.Route.extend({
     /* Memory freed */
     this.store.unloadAll('order');
     this.store.unloadAll('line_item');
+  },
+  setupController: function(controller, model) {
+    controller.set('model', model);
+    controller.initialize_websockets();
   }
 });

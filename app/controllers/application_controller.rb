@@ -11,5 +11,10 @@ class ApplicationController < ActionController::Base
     return nil
   end
 
+  # Websocket
+  def client_connected
+    render status: 200
+  end
+
 
 end
