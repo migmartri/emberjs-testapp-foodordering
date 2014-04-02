@@ -78,24 +78,23 @@ App.CurrentOrderController = Ember.ObjectController.extend({
 
     /* Line Item updated */
     channel.bind('line_item_updated', function(data) {
-      controller.store.find('line_item', data.id).then(function(e){
-        e.set('qty', data.qty);
-      });
+      data = JSON.parse(data);
+      controller.store.pushPayload("lineItem", data);
     });
 
     channel.bind('line_item_created', function(data) {
-      //controller.store.find('product', data.product_id).then(function(product){
-      //  order = controller.get('model');
-      //  controller.store.createRecord("lineItem", {id: data.id, product: product, order: order,
-      //                     created_at: new Date(),
-      //                     title: product.get('title')}).save();
-      //  });
+      data = JSON.parse(data);
+      controller.store.pushPayload("lineItem", data);
+      // TODO, the view does not react
+      // http://stackoverflow.com/questions/19733900/ember-store-push-with-hasmany-doesnt-update-template
+      //controller.get('model').get('line_items').addObject(line_item);
     });
 
     channel.bind('line_item_deleted', function(data) {
-      controller.store.find('line_item', data.id).then(function(e){
-        e.deleteRecord();
-      });
+      data = JSON.parse(data);
+      var item = controller.store.getById('line_item', data.line_item.id);
+      if(item)
+        controller.store.unloadRecord(item);
     });
 
     channel.bind('order_closed', function(data) {

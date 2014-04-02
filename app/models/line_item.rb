@@ -20,7 +20,7 @@ class LineItem < ActiveRecord::Base
   end
 
   def send_message(message)
-    WebsocketRails["order-#{self.order_id}"].trigger('line_item_' + message, self)
+    WebsocketRails["order-#{self.order_id}"].trigger('line_item_' + message, LineItemSerializer.new(self).to_json)
   end
 
   private
