@@ -90,7 +90,7 @@ App.CurrentOrderController = Ember.ObjectController.extend({
       * 2 - pushPayload does not return the updated object so we need to search for it*/
       var item = controller.store.getById('line_item', data.line_item.id);
       if(item)
-        controller.get('model').get('line_items').addObject(line_item);
+        controller.get('model').get('line_items').addObject(item);
     });
 
     channel.bind('line_item_deleted', function(data) {
