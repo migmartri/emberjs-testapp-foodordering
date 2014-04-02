@@ -85,9 +85,12 @@ App.CurrentOrderController = Ember.ObjectController.extend({
     channel.bind('line_item_created', function(data) {
       data = JSON.parse(data);
       controller.store.pushPayload("lineItem", data);
-      // TODO, the view does not react
-      // http://stackoverflow.com/questions/19733900/ember-store-push-with-hasmany-doesnt-update-template
-      //controller.get('model').get('line_items').addObject(line_item);
+      /* We have a few issues here TODO, fix in the future
+      * 1 - pushPayload does not update the lineItem relationship 
+      * 2 - pushPayload does not return the updated object so we need to search for it*/
+      var item = controller.store.getById('line_item', data.line_item.id);
+      if(item)
+        controller.get('model').get('line_items').addObject(line_item);
     });
 
     channel.bind('line_item_deleted', function(data) {
