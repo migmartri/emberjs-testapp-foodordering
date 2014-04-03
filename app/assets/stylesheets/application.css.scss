@@ -18,8 +18,9 @@
  */
 
 body{
-  background: url(asset-path('bg.png'));
-  background-attachment: fixed;
+  //background: url(asset-path('bg.png'));
+  background-color: #31373d;
+  //background-attachment: fixed;
   padding-top: 70px;
   .board{
     #users-list{
