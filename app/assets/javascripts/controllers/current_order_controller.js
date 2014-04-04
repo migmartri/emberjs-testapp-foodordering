@@ -14,6 +14,7 @@ App.CurrentOrderController = Ember.ObjectController.extend({
             elem.incrQty().save();
           }else{
             store.createRecord("lineItem", {product: product, order: order,
+                               createdAt: new Date(), /* We define it here for avoiding sorting jumps in the sidebar*/
                                title: product.get('title')}).save();
           }
       });
