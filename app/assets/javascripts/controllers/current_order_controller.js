@@ -110,7 +110,8 @@ App.CurrentOrderController = Ember.ObjectController.extend({
     });
 
     channel.bind('order_closed', function(data) {
-      console.warn('order closed: ' + data);
+      controller.store.unloadAll('line_item');
+      controller.transitionToRoute('orders.show', data);
     });
   }
 });

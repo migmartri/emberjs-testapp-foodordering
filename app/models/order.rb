@@ -11,9 +11,9 @@ class Order < ActiveRecord::Base
 
   aasm do
     state :open, :initial => true
-    state :closed, :before_enter => :set_closed_time
+    state :closed, before_enter: 'set_closed_time'
 
-    event :close do
+    event :close, after: 'broadcast_closed' do
       transitions :from => :open, :to => :closed
     end
   end
@@ -24,6 +24,10 @@ class Order < ActiveRecord::Base
 
   def set_closed_time
     self.closed_at = Time.now
+  end
+
+  def broadcast_closed
+    WebsocketRails["order-#{self.id}"].trigger('order_closed', self.id)
   end
 
   protected
