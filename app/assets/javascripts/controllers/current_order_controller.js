@@ -14,7 +14,6 @@ App.CurrentOrderController = Ember.ObjectController.extend({
             elem.incrQty().save();
           }else{
             store.createRecord("lineItem", {product: product, order: order,
-                               created_at: new Date(),
                                title: product.get('title')}).save();
           }
       });
@@ -84,13 +83,13 @@ App.CurrentOrderController = Ember.ObjectController.extend({
 
     channel.bind('line_item_created', function(data) {
       data = JSON.parse(data);
-      controller.store.pushPayload("lineItem", data);
-      /* We have a few issues here TODO, fix in the future
-      * 1 - pushPayload does not update the lineItem relationship 
-      * 2 - pushPayload does not return the updated object so we need to search for it*/
-      var item = controller.store.getById('line_item', data.line_item.id);
-      if(item)
-        controller.get('model').get('line_items').addObject(item);
+      //controller.store.pushPayload("lineItem", data);
+      ///* We have a few issues here TODO, fix in the future
+      //* 1 - pushPayload does not update the lineItem relationship 
+      //* 2 - pushPayload does not return the updated object so we need to search for it*/
+      //var item = controller.store.getById('line_item', data.line_item.id);
+      //if(item)
+      //  controller.get('model').get('line_items').addObject(item);
     });
 
     channel.bind('line_item_deleted', function(data) {

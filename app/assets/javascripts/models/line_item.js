@@ -5,7 +5,7 @@ App.LineItem = DS.Model.extend({
   // If we add the productId attribute the relationship does not work
   //productId: attr(),
   order: DS.belongsTo('order'),
-  updatedAt: attr(),
+  createdAt: attr('date'),
   qty: attr('number', {defaultValue: 1}),
   incrQty: function(){
     this.set('qty', this.get('qty') + 1);
