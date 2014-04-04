@@ -35,7 +35,6 @@ App.CurrentOrderController = Ember.ObjectController.extend({
       controller = this;
       Bootstrap.GNM.push('Closed!', 'Order closed!', 'success');
       $.post('/api/v1/orders/' + this.get('id') + '/close', function(){
-        controller.store.unloadAll('line_item');
         controller.transitionToRoute('orders.show', controller.get('model'));
       });
     },
@@ -110,7 +109,6 @@ App.CurrentOrderController = Ember.ObjectController.extend({
     });
 
     channel.bind('order_closed', function(data) {
-      controller.store.unloadAll('line_item');
       controller.transitionToRoute('orders.show', data);
     });
   }
