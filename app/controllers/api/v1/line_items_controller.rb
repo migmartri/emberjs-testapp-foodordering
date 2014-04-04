@@ -1,6 +1,5 @@
 class Api::V1::LineItemsController < ApplicationController
   respond_to :json
-  #before_filter :load_order
 
   def create
     @line_item = LineItem.create(line_items_params)
