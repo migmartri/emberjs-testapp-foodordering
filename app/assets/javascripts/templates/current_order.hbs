@@ -12,6 +12,10 @@
     {{/if}}
   </div>
   <div class='col-sm-12'>
-    {{view 'App.OrderProductsView'}}
+    {{#if loadingProducts}}
+      {{partial 'current_order/loading'}}
+    {{else}}
+      {{view 'App.OrderProductsView'}}
+    {{/if}}
   </div>
 </div>

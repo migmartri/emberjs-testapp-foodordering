@@ -17,6 +17,8 @@ App.ApplicationRoute = Ember.Route.extend({
           $(this).remove();
         });
       });
+      /* Bubble down */
+      return true;
     }
   }
 });

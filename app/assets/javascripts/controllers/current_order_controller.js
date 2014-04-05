@@ -44,13 +44,14 @@ App.CurrentOrderController = Ember.ObjectController.extend({
     }
   },
 
-
   loadProducts: function(){
     controller = this;
     if(controller.get('model')){
+      controller.set('loadingProducts', true);
       controller.store.find('product').then(function(products){
         controller.set('products', products);
         controller.set('all_products', products);
+        controller.set('loadingProducts', false);
       });
     }
   }.observes('model'),
