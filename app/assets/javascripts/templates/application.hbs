@@ -1,7 +1,7 @@
 {{#if currentCompany.isSignedIn}}
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">FoodMatic {{currentCompany.name}}</a>
+      <a class="navbar-brand" href="/">{{currentCompany.name}}</a>
       {{#if inCurrentOrder}}
         <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
           <i class="fa fa-shopping-cart"></i>
@@ -25,9 +25,14 @@
 
       </ul>
       <ul class='nav navbar-nav pull-right'>
-        {{#view App.NavView}}
-          <a href='#' {{action 'logout'}}>Logout</a></li>
-        {{/view}}
+        <li><a href='https://github.com/migmartri/emberjs-testapp-foodordering' target='_blank'
+          title='Download the code'> <i class="fa fa-code fa-lg"></i>
+          Code
+        </a>
+        </li>
+        <li><a href='#' {{action 'logout'}} title='Logout'> <i class="fa fa-sign-out fa-lg"></i>
+          Logout
+          </a></li>
        </ul>
      </div>
   </nav>
