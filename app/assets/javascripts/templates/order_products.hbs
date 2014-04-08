@@ -8,12 +8,16 @@
   </div>
 </div>
 <div id='order_products'>
-  {{#each this.products}}
-    {{view App.OrderProductItemView}}
+  {{#if loadingProducts}}
+    {{partial 'current_order/loading_div'}}
   {{else}}
-    <div class='box'>
-    	<h3>There are not products</h3>
-      {{#link-to 'currentOrder.new_suggestion' class='btn btn-default'}}Suggest product{{/link-to}}
-    </div>
-  {{/each}}
+    {{#each this.products}}
+      {{view App.OrderProductItemView}}
+    {{else}}
+      <div class='box'>
+        <h3>There are not products</h3>
+        {{#link-to 'currentOrder.new_suggestion' class='btn btn-default'}}Suggest product{{/link-to}}
+      </div>
+    {{/each}}
+    {{/if}}
 </div>

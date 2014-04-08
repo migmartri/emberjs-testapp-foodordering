@@ -9,7 +9,7 @@ App.OrderProductsView = Ember.View.extend({
   applyMasonry: function(){
     App.masonry = $('#order_products').masonry({
        itemSelector: '.product_item',
-       columnWidth: 260
+       columnWidth: 250
     });
   }
 });

@@ -124,13 +124,13 @@ body{
   }
 
 /* collapsed sidebar styles */
-@media screen and (max-width: 917px) {
-  #current_order_container{
-    #order_products{
-      .product_item{width:50%}
-    }
-  }
-}
+//@media screen and (max-width: 917px) {
+//  #current_order_container{
+//    #order_products{
+//      .product_item{width:50%}
+//    }
+//  }
+//}
 
 @media screen and (max-width: 767px) {
   #sidebar {
@@ -141,9 +141,6 @@ body{
   }
   #current_order_container{
     margin-right: 0;
-    #order_products{
-      .product_item{width:50%}
-    }
   }
 }
 
