@@ -2,9 +2,11 @@
 <span class="badge">{{lineItemsCount}}</span>
 ({{#link-to 'currentOrder.new_suggestion'}}Suggest product{{/link-to}})
 <table id='line-items'>
+  <tbody>
   {{#each arrangedContent}}
     {{view App.OrderLineItemView}}
   {{/each}}
+  </tbody>
 </table>
 
 {{#unless model}}
