@@ -5,7 +5,10 @@ class Api::V1::OrdersController < ApplicationController
 
   def index
     # Do not include all the line items nor the suggestions
-    respond_with current_company.orders.load, scope: nil
+    @orders = current_company.orders.page(params[:page]).per(3)
+    @orders = @orders.where(aasm_state: 'closed') if params[:closed]
+
+    render json: @orders, meta: {total_pages: @orders.total_pages, total_count: @orders.total_count}
   end
 
   def current

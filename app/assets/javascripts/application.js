@@ -38,6 +38,8 @@ App = Ember.Application.create({
   currentPath: ''
 });
 
+ENV = {FEATURES: {'query-params-new': true}};
+
 //= require_tree .
 
 $(document).ready(function() {

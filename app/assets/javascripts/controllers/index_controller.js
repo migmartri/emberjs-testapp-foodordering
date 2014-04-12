@@ -1,5 +1,4 @@
 App.IndexController = Ember.ObjectController.extend({
-  needs: 'currentCompany',
   companyCode: null,
   actions: {
     checkCode: function(){
@@ -8,7 +7,7 @@ App.IndexController = Ember.ObjectController.extend({
         function(data){
           Bootstrap.GNM.push('Welcome!', 'Welcome to ' + data.company.name, 'success');
           company = self.store.createRecord('company', data.company);
-          self.get('controllers.currentCompany').set('content', company);
+          self.get('currentCompany').set('content', company);
           self.transitionToRoute('currentOrder');
         },
         function(){

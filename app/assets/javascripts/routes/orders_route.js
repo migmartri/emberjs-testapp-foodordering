@@ -1,7 +1,6 @@
 App.OrdersRoute = Ember.Route.extend({
-  model: function(){
-  	return this.store.find('order').then(function(orders){
-       return orders.filterBy('aasm_state', 'closed');
-    })
+  model: function(params){
+    this.controllerFor('orders').set('currentPage', parseInt(params.page));
+  	return this.store.find('order', {page: params.page, closed: true})
   }
 });

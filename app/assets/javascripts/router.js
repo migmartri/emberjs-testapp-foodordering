@@ -6,7 +6,7 @@ App.Router.map(function() {
   });
 
   this.resource('orders', { path: '/admin/orders' }, function(){
-   this.route('show', {path: '/:order_id'});
+    this.route('show', {path: '/:order_id'});
   });
 
   this.resource('products', {path: '/admin/products'}, function(){

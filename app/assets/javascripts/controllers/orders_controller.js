@@ -1,10 +1,11 @@
 App.OrdersController = Ember.ArrayController.extend({
-  viewingOrderId: null,
+  queryParams: ['page'],
   sortProperties: ['created_at'],
   sortAscending: false,
-  isActive: (function(){
-    console.log(this.get('id'));
-    this.get('viewingOrderId') == this.get('id');
-    return false;
-  }).property('viewingOrderId')
+  currentPage: 1,
+  actions:{
+    loadPage: function(incOrDec){
+      this.transitionToRoute('orders', {page: this.get('currentPage') + incOrDec});
+    }
+  }
 });

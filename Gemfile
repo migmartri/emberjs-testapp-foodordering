@@ -33,6 +33,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
+gem 'kaminari'
 
 gem 'websocket-rails'
 gem 'coffee-script' # Required by websocket-rails
