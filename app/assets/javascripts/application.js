@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require pre_app
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.effect.all
@@ -23,7 +24,7 @@
 //= require ember-addons.bs_for_ember/dist/js/bs-growl-notifications.min
 //= require ember-addons.bs_for_ember/dist/js/bs-notifications.min
 //= require ember-addons.bs_for_ember/dist/js/bs-modal.min
-//= require ember-addons.bs_for_ember/dist/js/bs-button.min
+//= require ember-addons.bs_for_ember/dist/js/bs-button.max
 //= require momentjs/min/moment.min
 //= require bootstrap/dropdown
 //= require bootstrap/collapse
@@ -38,7 +39,6 @@ App = Ember.Application.create({
   currentPath: ''
 });
 
-ENV = {FEATURES: {'query-params-new': true}};
 
 //= require_tree .
 

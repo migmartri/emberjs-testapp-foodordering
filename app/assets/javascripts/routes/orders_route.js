@@ -1,6 +1,10 @@
 App.OrdersRoute = Ember.Route.extend({
+  queryParams: {
+    page: {
+      refreshModel: true /* After a page change we refresh the data */
+    }
+  },
   model: function(params){
-    this.controllerFor('orders').set('currentPage', parseInt(params.page));
   	return this.store.find('order', {page: params.page, closed: true})
   }
 });

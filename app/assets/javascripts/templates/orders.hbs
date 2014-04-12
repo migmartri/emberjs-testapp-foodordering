@@ -1,9 +1,8 @@
 <div class='col-sm-10 col-sm-offset-1 box col-lg-6 col-lg-offset-3'>
   {{#if model}}
-    {{currentPage}}
-    {{#link-to 'orders' (query-params page="2") }}Testing{{/link-to}}
-    <a {{action 'loadPage' -1}} href='#'>Prev page</a>
-    <a {{action 'loadPage' 1}} href='#'>Next page</a>
+    {{page}}
+    <a {{action 'loadPage' -1}} href='#'>Prev</a>
+    <a {{action 'loadPage' 1}} href='#'>Next</a>
     <div class='col-sm-4'>
       <ul class="nav nav-pills nav-stacked">
         {{#each arrangedContent}}
