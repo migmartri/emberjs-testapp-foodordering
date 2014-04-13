@@ -63,8 +63,7 @@
     "tag": "0.6.1",
     "commit": "906f172b4ae1f5b206c1888a79425c5b8cf4e4e6"
   },
-  "_source": "git://github.com/ember-addons/bootstrap-for-ember.git",
-  "_target": "~0.6.1",
-  "_originalSource": "ember-addons.bs_for_ember",
-  "_direct": true
+  "_source": "https://github.com/ember-addons/bootstrap-for-ember.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ember-addons/bootstrap-for-ember.git"
 }

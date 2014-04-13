@@ -127,8 +127,10 @@
         _ref = this.get('content');
         _results = [];
         for (key in _ref) {
-          val = _ref[key];
-          _results.push(this.set(key, val));
+          if(['title', 'clicked', 'dismiss'].contains(key)){
+            val = _ref[key];
+            _results.push(this.set(key, val));
+          }
         }
         return _results;
       } else {

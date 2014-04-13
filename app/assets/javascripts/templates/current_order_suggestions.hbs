@@ -1,8 +1,10 @@
 {{#if model}}
   <span class='heading' id="suggesting_heading">Suggestions</span>
   <table id='suggestions'>
+    <tbody>
     {{#each arrangedContent}}
       {{view App.OrderSuggestionView}}
     {{/each}}
+    </tbody>
   </table>
 {{/if}}

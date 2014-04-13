@@ -1,5 +1,3 @@
-// Fetched from channel: canary, with url http://builds.emberjs.com/canary/ember.js
-// Fetched on: 2014-04-12T01:43:37Z
 /*!
  * @overview  Ember - JavaScript Application Framework
  * @copyright Copyright 2011-2014 Tilde Inc. and contributors
@@ -7,7 +5,7 @@
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   1.7.0-beta.1+canary.3affb824
+ * @version   1.7.0-beta.1+canary.63ae8897
  */
 
 
@@ -2533,7 +2531,7 @@ define("ember-metal/core",
 
       @class Ember
       @static
-      @version 1.7.0-beta.1+canary.3affb824
+      @version 1.7.0-beta.1+canary.63ae8897
     */
 
     if ('undefined' === typeof Ember) {
@@ -2560,10 +2558,10 @@ define("ember-metal/core",
     /**
       @property VERSION
       @type String
-      @default '1.7.0-beta.1+canary.3affb824'
+      @default '1.7.0-beta.1+canary.63ae8897'
       @static
     */
-    Ember.VERSION = '1.7.0-beta.1+canary.3affb824';
+    Ember.VERSION = '1.7.0-beta.1+canary.63ae8897';
 
     /**
       Standard environmental variables. You can define these in a global `EmberENV`
@@ -9996,7 +9994,7 @@ define("rsvp/promise",
     /**
       Promise objects represent the eventual result of an asynchronous operation. The
       primary way of interacting with a promise is through its `then` method, which
-      registers callbacks to receive either a promise’s eventual value or the reason
+      registers callbacks to receive either a promiseâ€™s eventual value or the reason
       why the promise cannot be fulfilled.
 
       Terminology
@@ -15473,7 +15471,7 @@ define("ember-runtime/mixins/array",
         This returns the objects at the specified indexes, using `objectAt`.
 
         ```javascript
-        var arr = ['a', 'b', 'c', 'd'];
+        var arr =Â ['a', 'b', 'c', 'd'];
         arr.objectsAt([0, 1, 2]);  // ["a", "b", "c"]
         arr.objectsAt([2, 3, 4]);  // ["c", "d", undefined]
         ```
@@ -27784,7 +27782,7 @@ define("metamorph",
     "use strict";
     // ==========================================================================
     // Project:   metamorph
-    // Copyright: ©2014 Tilde, Inc. All rights reserved.
+    // Copyright: Â©2014 Tilde, Inc. All rights reserved.
     // ==========================================================================
 
     var K = function() {},
@@ -30331,7 +30329,7 @@ define("ember-handlebars/ext",
 
       ```javascript
       Ember.Handlebars.registerBoundHelper('capitalize', function(value) {
-        return value.toUpperCase();
+        return Ember.String.capitalize(value);
       });
       ```
 
@@ -30371,7 +30369,7 @@ define("ember-handlebars/ext",
       Bound hash options are also supported. Example:
 
       ```handlebars
-      {{repeat text countBinding="numRepeats"}}
+      {{repeat text count=numRepeats}}
       ```
 
       In this example, count will be bound to the value of
@@ -31258,7 +31256,7 @@ define("ember-handlebars/helpers/binding",
       ```
 
       All three strategies - string return value, boolean return value, and
-      hard-coded value – can be combined in a single declaration:
+      hard-coded value â€“ can be combined in a single declaration:
 
       ```handlebars
       <img {{bind-attr class=":class-name-to-always-apply view.someBool:class-name-if-true view.someProperty"}}>
@@ -39613,7 +39611,16 @@ define("ember-routing/system/router",
           return;
         }
 
-        Ember.Logger.error('Error while loading route: ' + (error && error.stack));
+        var errorArgs = ['Error while loading route: ' + transition.targetName];
+
+        if (error) {
+          if (error.message) { errorArgs.push(error.message); }
+          if (error.stack)   { errorArgs.push(error.stack); }
+
+          if (typeof error === "string") { errorArgs.push(error); }
+        }
+
+        Ember.Logger.error.apply(this, errorArgs);
       },
 
       loading: function(transition, originRoute) {
@@ -43899,7 +43906,7 @@ define("ember-application/system/resolver",
       _logLookup: function(found, parsedName) {
         var symbol, padding;
 
-        if (found) { symbol = '[✓]'; }
+        if (found) { symbol = '[âœ“]'; }
         else          { symbol = '[ ]'; }
 
         if (parsedName.fullName.length > 60) {
