@@ -1,20 +1,22 @@
 <div class='col-sm-10 col-sm-offset-1 box col-lg-6 col-lg-offset-3'>
   {{#if model}}
-    <div class='col-sm-4'>
-      <ul class="nav nav-pills nav-stacked">
-        {{#each arrangedContent}}
-        {{#view App.NavView}}
-            {{#link-to 'orders.show' this}}
-              <span class="badge pull-right">{{lineItemsCount}}</span>
-              {{order_number}}
-            {{/link-to}}
-         {{/view}}
-        {{/each}}
-      </ul>
-    </div>
-    <div class='col-sm-8'>
-      <span class='heading'>Closed orders</span>
-      {{outlet}}
+    <div class='row'>
+      <div class='col-sm-4'>
+        <ul class="nav nav-pills nav-stacked">
+          {{#each arrangedContent}}
+          {{#view App.NavView}}
+              {{#link-to 'orders.show' this}}
+                <span class="badge pull-right">{{lineItemsCount}}</span>
+                {{order_number}}
+              {{/link-to}}
+           {{/view}}
+          {{/each}}
+        </ul>
+      </div>
+      <div class='col-sm-8'>
+        <span class='heading'>Closed orders</span>
+        {{outlet}}
+      </div>
     </div>
     <div class='pull-right'>
       {{view App.PaginationView totalPages=totalPages page=page}}

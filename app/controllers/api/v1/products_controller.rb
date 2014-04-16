@@ -4,7 +4,8 @@ class Api::V1::ProductsController < ApplicationController
   #before_filter :setup_picture, only: [:create, :update]
 
   def index
-    respond_with current_company.products.load
+    @products = current_company.products.order('created_at desc').page(params[:page]).per(20)
+    render json: @products, meta: {total_pages: @products.total_pages, total_count: @products.total_count}
   end
 
   def show

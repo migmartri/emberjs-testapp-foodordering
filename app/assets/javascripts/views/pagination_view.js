@@ -11,7 +11,7 @@ App.PaginationView = Ember.View.extend({
     var currentPage = this.get('page');
     var gapWritten = false;
 
-    if (totalPages == 1) return;
+    if (totalPages < 2) return;
 
     /* Prev page */
     buffer.push("<li");

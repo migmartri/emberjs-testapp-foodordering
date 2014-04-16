@@ -1,5 +1,8 @@
 App.ProductsRoute = Ember.Route.extend({
-  model: function() {
-    return this.store.find("product");
+  queryParams: {
+    page: { refreshModel: true }
+  },
+  model: function(params) {
+  	return this.store.find('product', {page: params.page})
   },
 });

@@ -26,6 +26,9 @@
         {{/each}}
       </tbody>
     </table>
+  <div class='pull-right'>
+    {{view App.PaginationView totalPages=totalPages page=page}}
+  </div>
   {{else}}
     <p> There are no products, create the first one </p>
   {{/if}}
