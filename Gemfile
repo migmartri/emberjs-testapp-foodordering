@@ -20,7 +20,6 @@ gem 'haml'
 gem 'rails_12factor', group: :production
 gem 'sprockets_better_errors' # Not needed in Rails 4.1
 
-
 # Bootstrap 3
 gem 'bootstrap-sass', :git => 'git://github.com/thomas-mcdonald/bootstrap-sass.git'
 gem "font-awesome-rails"
