@@ -1,8 +1,11 @@
-/* Pagination component for ember using
+/* 
+* Pagination component for ember using
 * - Ember.js new query-parameters
 * - Ember data meta fields
 * - Integrates with bootstrap out of the box
 * - You can see it runnning here http://foodmatic.herokuapp.com/ (access code 'demo')
+*/
+
 /* INSTALLATION AND REQUIREMENTS
 * 1 - Use a version of Ember that supports query-parameters-new. At the time of the 
 * writing only canary version does.
@@ -34,8 +37,8 @@
 * 2.3 - Template
 *  {{ember-paginate page=page totalPages=totalPages action="loadPage"}}
 *  You can also pass some optional parameters as innerWindow or outerWindow
-*
 * */
+
 App.EmberPaginateComponent = Ember.Component.extend({
   tagName: 'ul',
   innerWindow: 2,
