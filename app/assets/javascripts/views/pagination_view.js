@@ -21,6 +21,7 @@ App.PaginationView = Ember.View.extend({
 
     for (var i=1; i<=totalPages; i++) {
       if(this.get('relevantPages').contains(i)){
+        gapWritten = false;
         buffer.push("<li ");
         if(currentPage == i){
           buffer.push(" class='active'");
@@ -84,8 +85,8 @@ App.PaginationView = Ember.View.extend({
     }
 
     /* Inner Window */
-    var from_window = this.get('page') - this.get('innerWindow') - 1;
-    var to_window = this.get('page') + this.get('innerWindow') + 1;
+    var from_window = this.get('page') - this.get('innerWindow');
+    var to_window = this.get('page') + this.get('innerWindow');
 
     for (var i= from_window; i<= to_window; i++) {
       if(i > 0 && i <= this.get('totalPages'))
