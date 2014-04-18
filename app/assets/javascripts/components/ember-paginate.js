@@ -1,5 +1,10 @@
+/* Pagination component for ember using
+* - Ember.js new query-parameters
+* - Ember data meta fields
+* - Integrates with bootstrap out of the box
+* - You can see it runnning here http://foodmatic.herokuapp.com/ (access code 'demo')
 /* INSTALLATION AND REQUIREMENTS
-* 1 - Use ember version that supports query-parameters-new at the time of the 
+* 1 - Use a version of Ember that supports query-parameters-new. At the time of the 
 * writing only canary version does.
 * 
 * 2 - Add the following code to your route, controller and template, please
