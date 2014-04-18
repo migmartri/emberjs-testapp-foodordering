@@ -27,7 +27,9 @@
       </tbody>
     </table>
   <div class='pull-right'>
+    {{! We have deprecated the Pagination view version in favor of a components based version 
     {{view App.PaginationView totalPages=totalPages page=page}}
+    {{ember-paginate page=page totalPages=totalPages action="loadPage"}}
   </div>
   {{else}}
     <p> There are no products, create the first one </p>

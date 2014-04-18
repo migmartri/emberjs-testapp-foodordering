@@ -14,6 +14,9 @@ App.ProductsController = Ember.ArrayController.extend({
     },
     show: function() {
       return Bootstrap.ModalManager.show('productNew');
+    },
+    loadPage: function(pageNumber){
+      this.transitionToRoute({queryParams: {page: pageNumber}});
     }
   }
 });

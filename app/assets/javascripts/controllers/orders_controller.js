@@ -7,8 +7,9 @@ App.OrdersController = Ember.ArrayController.extend({
   totalPages: (function(){
     return this.store.metadataFor("order")['total_pages'];
   }).property(),
-  /* EO pagination */
-  //totalCount: (function(){
-  //  return this.store.metadataFor("order")['total_count'];
-  //}).property(),
+  actions: {
+    loadPage: function(pageNumber){
+      this.transitionToRoute({queryParams: {page: pageNumber}});
+    }
+  }
 });

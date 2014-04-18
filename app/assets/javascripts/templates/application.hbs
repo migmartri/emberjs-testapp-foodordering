@@ -17,7 +17,7 @@
           {{#link-to 'currentOrder'}}Current order{{/link-to}}
         {{/view}}
         {{#view App.NavView}}
-          {{#link-to 'products'}}Manage products{{/link-to}}
+          {{#link-to 'products' (query-params page=1)}}Manage products{{/link-to}}
         {{/view}}
         {{#view App.NavView}}
           {{#link-to 'orders' (query-params page=1)}}Manage orders{{/link-to}}

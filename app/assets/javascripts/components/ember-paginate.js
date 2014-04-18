@@ -1,5 +1,4 @@
-/* Note: Deprecated in favor of the component version */
-App.PaginationView = Ember.View.extend({
+App.EmberPaginateComponent = Ember.Component.extend({
   tagName: 'ul',
   innerWindow: 2,
   outerWindow: 0,
@@ -61,7 +60,7 @@ App.PaginationView = Ember.View.extend({
     return false; /* Stop event propagation */
   },
   loadPage: function(pageNumber){
-    this.get('controller').transitionToRoute({queryParams: {page: pageNumber}});
+    return this.sendAction('action', pageNumber);
   },
   nextPage: function(){
     this.loadPage(this.get('page') + 1);
