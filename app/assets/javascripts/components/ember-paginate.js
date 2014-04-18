@@ -1,3 +1,36 @@
+/* INSTALLATION AND REQUIREMENTS
+* 1 - Use ember version that supports query-parameters-new at the time of the 
+* writing only canary version does.
+* 
+* 2 - Add the following code to your route, controller and template, please
+*     notice that the model action in the route needs to be implemented with your
+*     resource.
+*
+* 2.1 - Route
+*  queryParams: {
+*    page: {
+*      refreshModel: true 
+*    }
+*  },
+*  model: function(params){
+*    NOTE, Load your model using the params.page parameter
+*  }
+*
+* 2.2 - Controller
+*    page: 1,
+*    totalPages: (function(){
+*      return this.store.metadataFor([YOURMODEL])['total_pages'];
+*    }).property(),
+*   actions: {
+*    loadPage: function(pageNumber){
+*      this.transitionToRoute({queryParams: {page: pageNumber}});
+*    }
+* 
+* 2.3 - Template
+*  {{ember-paginate page=page totalPages=totalPages action="loadPage"}}
+*  You can also pass some optional parameters as innerWindow or outerWindow
+*
+* */
 App.EmberPaginateComponent = Ember.Component.extend({
   tagName: 'ul',
   innerWindow: 2,
